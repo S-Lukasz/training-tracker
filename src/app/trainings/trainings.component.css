@@ -1,0 +1,30 @@
+.trainings {
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgb(35, 39, 39);
+}
+
+.training-item-parent {
+    margin-bottom: 40px;
+}
+
+.training-item-add {
+    border: 1px solid greenyellow;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    transition: all;
+    transition-duration: 300ms;
+    font-weight: bold;
+
+    padding: 25px;
+    height: 100%;
+    width: 80%;
+}
+
+.training-item-add:hover {
+    border: 1px solid white;
+    background-color: rgb(34, 34, 34);
+    color: greenyellow;
+}
