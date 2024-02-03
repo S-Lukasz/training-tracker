@@ -1,15 +1,74 @@
 .training-item {
-    border: 1px solid white;
-    border-radius: 10px;
-    text-align: center;
-    transition: all;
-    transition-duration: 300ms;
-    padding: 0;
-    margin-top: 30px;
-    height: 100%;
-    width: 80%;
+    margin-top: 15px;
 }
 
-.training-item:hover {
-    background-color: rgb(34, 34, 34);
+.training-item-btn
+{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #19252b;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all;
+    transition-duration: 300ms;
+}
+
+.training-item-btn:hover
+{
+    background-color: #121e24;
+    box-shadow: 1px 1px 20px rgb(11, 16, 22);
+}
+
+.training-item-name
+{
+    padding-left: 10px;
+    width: fit-content;
+    height: fit-content;
+    color: rgb(231, 231, 231);
+    text-align: left;
+}
+
+.training-item-left {
+    display: flex;
+    flex-direction: column;
+    color: rgb(139, 139, 139);
+
+    width: fit-content;
+    height: fit-content;
+}
+
+.training-item-exercises
+{
+    display: flex;
+}
+
+.training-item-exercise
+{
+    padding-left: 10px;
+}
+
+.training-item-exercises-break {
+    
+    padding-left: 5px;
+    background-color: blue;
+}
+
+
+.training-item-right {
+    display: flex;
+    color: rgb(139, 139, 139);
+    justify-items: center;
+}
+
+
+.training-item-date
+{
+    padding-left: 10px;
+    color: rgb(139, 139, 139);
+}
+
+.training-item-icon {
+    padding: 10px;
+    padding-top: 18px;
 }

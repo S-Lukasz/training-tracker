@@ -35,7 +35,7 @@ export interface Database {
   }
   public: {
     Tables: {
-      equipements: {
+      equipments: {
         Row: {
           id: number
           name: string | null
@@ -52,26 +52,29 @@ export interface Database {
       }
       exercises: {
         Row: {
-          equipement_id: number | null
+          equipment_id: number | null
           id: number
           muscle_id: number | null
+          training_id: number | null
         }
         Insert: {
-          equipement_id?: number | null
+          equipment_id?: number | null
           id?: number
           muscle_id?: number | null
+          training_id?: number | null
         }
         Update: {
-          equipement_id?: number | null
+          equipment_id?: number | null
           id?: number
           muscle_id?: number | null
+          training_id?: number | null
         }
         Relationships: [
           {
-            foreignKeyName: "exercises_equipement_id_fkey"
-            columns: ["equipement_id"]
+            foreignKeyName: "exercises_equipment_id_fkey"
+            columns: ["equipment_id"]
             isOneToOne: false
-            referencedRelation: "equipements"
+            referencedRelation: "equipments"
             referencedColumns: ["id"]
           },
           {
@@ -79,6 +82,13 @@ export interface Database {
             columns: ["muscle_id"]
             isOneToOne: false
             referencedRelation: "muscles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "exercises_training_id_fkey"
+            columns: ["training_id"]
+            isOneToOne: false
+            referencedRelation: "trainings"
             referencedColumns: ["id"]
           }
         ]
@@ -138,16 +148,19 @@ export interface Database {
           exercise_id: number | null
           id: number
           reps: number
+          weight: number | null
         }
         Insert: {
           exercise_id?: number | null
           id?: number
           reps: number
+          weight?: number | null
         }
         Update: {
           exercise_id?: number | null
           id?: number
           reps?: number
+          weight?: number | null
         }
         Relationships: [
           {
@@ -158,6 +171,24 @@ export interface Database {
             referencedColumns: ["id"]
           }
         ]
+      }
+      trainings: {
+        Row: {
+          date: string | null
+          id: number
+          name: string | null
+        }
+        Insert: {
+          date?: string | null
+          id?: number
+          name?: string | null
+        }
+        Update: {
+          date?: string | null
+          id?: number
+          name?: string | null
+        }
+        Relationships: []
       }
     }
     Views: {

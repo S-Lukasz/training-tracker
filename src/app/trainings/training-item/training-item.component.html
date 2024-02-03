@@ -1,10 +1,19 @@
-<div class="training-item-parent" >
-
-
-    <button routerLink="/training-view" class="training-item"> 
-        <h3>training name 1</h3>
-        <h5 [ngStyle]="{'color': 'gray'}">data & time</h5>
+<div class="training-item" >
+    <button class="training-item-btn" [routerLink]="['/training-view']" [queryParams]="{trainingId: training?.id?.toString()}" > 
+        <div class="training-item-left">
+            <h2 class="training-item-name">{{training?.name}}</h2>
+            <div class="training-item-exercises">
+                <h3 class="training-item-exercise" *ngFor="let exercise of trainingData?.exercises; let i=index " >{{exercise.muscles?.name}}
+                    <!-- <h4 class="training-item-exercises-break" *ngIf="trainingData?.exercises?.length > 1 && i !== trainingData?.exercises?.length - 1"> / </h4> -->
+                </h3> 
+            </div>
+            
+            
+        </div>
+        
+        <div class="training-item-right">
+            <h3 class="training-item-date">{{training?.date}}</h3>
+            <fa-icon class="training-item-icon" [icon]="faAngleRight"></fa-icon>
+        </div>
     </button>
-
-    <!-- <app-training-item></app-training-item> -->
 </div>

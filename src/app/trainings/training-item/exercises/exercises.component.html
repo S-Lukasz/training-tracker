@@ -4,11 +4,7 @@
         <h4> Back </h4>
     </button>
 
-    <div>
-        <app-exercise-item></app-exercise-item>
-        <app-exercise-item></app-exercise-item>
-        <app-exercise-item></app-exercise-item>
-    </div>
+    <app-exercise-item class=" bg-slate-600 w-full h-full text-pink-200 " *ngFor="let exercise of exercises; let i = index" [index]="i" [trainingId]="trainingId" [exercise]="exercise"></app-exercise-item>
 
     <button class="exercise-item-add"> 
         + Add new

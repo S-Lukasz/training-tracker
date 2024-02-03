@@ -18,6 +18,8 @@ import { ExerciseItemComponent } from './trainings/training-item/exercises/exerc
 import { TrainingViewComponent } from './training-view/training-view.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ExerciseViewComponent } from './exercise-view/exercise-view.component';
+import { HeaderComponent } from './header/header.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const appRoutes: Routes = [
   { path: '', component: TrainingsComponent },
@@ -37,6 +39,7 @@ const appRoutes: Routes = [
     ExerciseItemComponent,
     TrainingViewComponent,
     ExerciseViewComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ const appRoutes: Routes = [
     FormsModule,
     CommonModule,
     RouterModule.forRoot(appRoutes),
+    FontAwesomeModule,
   ],
   providers: [provideClientHydration(), provideHttpClient(withFetch())],
   bootstrap: [AppComponent],

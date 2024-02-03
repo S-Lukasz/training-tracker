@@ -3,6 +3,7 @@ import {
   AuthChangeEvent,
   AuthSession,
   createClient,
+  QueryData,
   Session,
   SupabaseClient,
   User,
@@ -79,10 +80,75 @@ export class SupabaseService {
     return this.supabase.storage.from('avatars').upload(filePath, file);
   }
 
-  getExercises(): Observable<Tables<'exercises'>[]> {
-    const response = new Observable<Tables<'exercises'>[]>((observer) => {
+  getTrainingData(trainingId: number) {
+    const request = this.supabase
+      .from('trainings')
+      .select(
+        `name, 
+        date, 
+        exercises(
+          id, 
+          muscle_id, 
+          equipment_id, 
+          muscles(name), 
+          equipments(name)
+        )`
+      )
+      .eq('id', trainingId)
+      .limit(1)
+      .single();
+
+    type TrainingData = QueryData<typeof request>;
+
+    const response = new Observable<TrainingData>((observer) => {
+      request.then(({ data }) => observer.next(data as any));
+    });
+
+    return response;
+  }
+
+  getExerciseData(exerciseId: number) {
+    const request = this.supabase
+      .from('exercises')
+      .select(
+        `id, 
+        muscle_id, 
+        equipment_id, 
+        muscles(name), 
+        equipments(name)`
+      )
+      .eq('id', exerciseId)
+      .limit(1)
+      .single();
+
+    type ExerciseData = QueryData<typeof request>;
+
+    const response = new Observable<ExerciseData>((observer) => {
+      request.then(({ data }) => observer.next(data as any));
+    });
+
+    return response;
+  }
+
+  getExerciseSets(exerciseId: number) {
+    const request = this.supabase
+      .from('sets')
+      .select(`id, reps, weight`)
+      .eq('exercise_id', exerciseId);
+
+    type ExerciseSetsData = QueryData<typeof request>;
+
+    const response = new Observable<ExerciseSetsData>((observer) => {
+      request.then(({ data }) => observer.next(data as any));
+    });
+
+    return response;
+  }
+
+  getTrainings() {
+    const response = new Observable<Tables<'trainings'>[]>((observer) => {
       this.supabase
-        .from('exercises')
+        .from('trainings')
         .select()
         .then(({ data }) => observer.next(data as any));
     });

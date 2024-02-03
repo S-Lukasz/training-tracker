@@ -3,35 +3,23 @@
     <h2>Exercise Name</h2>
 
     <div>
-
-      
         <button class="exercise-item"> 
             <h3>Muscle:</h3>
-            <h5 [ngStyle]="{'color': 'gray'}">Chest</h5>
+            <h4 [ngStyle]="{'color': 'gray'}">{{exerciseData?.muscles?.name}}</h4>
         </button>
     
         <button class="exercise-item"> 
             <h3>Equipment</h3>
-            <h5 [ngStyle]="{'color': 'gray'}">Barbell</h5>
+            <h4 [ngStyle]="{'color': 'gray'}">{{exerciseData?.equipments?.name}}</h4>
         </button>
     
         <button class="sets-label"> 
-            <div class="sets-label-item">
-                <h3>Set 1</h3>
-                <h5 [ngStyle]="{'color': 'gray'}">Reps: 2</h5>
+            <div class="sets-label-item" *ngFor="let set of setsData; let i = index">
+                <h3>Set {{i + 1}}</h3>
+                <h4 [ngStyle]="{'color': 'lightgray'}">Reps: {{set?.reps}}  /  Weight: {{set?.weight}} kg</h4>
             </div>
-            <div class="sets-label-item">
-                <h3>Set 1</h3>
-                <h5 [ngStyle]="{'color': 'gray'}">Reps: 2</h5>
-            </div>
-            <div class="sets-label-item">
-                <h3>Set 1</h3>
-                <h5 [ngStyle]="{'color': 'gray'}">Reps: 2</h5>
-            </div>
-        
-
             <button class="sets-label-button"> 
-                + Add new
+                + New set
             </button>
         
         </button>
@@ -39,8 +27,6 @@
         <button routerLink="/training-view" class="exercise-item"> 
             <h4> Back </h4>
         </button>
-
-    
     </div>
 
 </div>

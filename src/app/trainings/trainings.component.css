@@ -1,30 +1,43 @@
 .trainings {
-    border: 1px solid white;
-    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: flex-start;
     text-align: center;
-    background-color: rgb(35, 39, 39);
+    margin-top: 60px;
 }
 
-.training-item-parent {
-    margin-bottom: 40px;
+.training-items
+{
+    margin-top: 30px;
 }
 
-.training-item-add {
-    border: 1px solid greenyellow;
-    border-radius: 10px;
+.training-item-add-btn
+{
     text-align: center;
-    color: white;
+    width: 100%;
+    background-color: #19252b;
+    border-radius: 10px;
+    cursor: pointer;
+    color: rgb(231, 231, 231);
+    padding: 30px;
+    font-size: large;
+    font-weight: bold;
     transition: all;
     transition-duration: 300ms;
-    font-weight: bold;
-
-    padding: 25px;
-    height: 100%;
-    width: 80%;
 }
 
-.training-item-add:hover {
-    border: 1px solid white;
-    background-color: rgb(34, 34, 34);
-    color: greenyellow;
+.training-item-add-btn:hover
+{
+    background-color: #121e24;
+    box-shadow: 1px 1px 20px rgb(11, 16, 22);
+}
+
+.training-item-name
+{
+    padding-left: 10px;
+    width: fit-content;
+    height: fit-content;
+    color: rgb(231, 231, 231);
+    text-align: left;
 }

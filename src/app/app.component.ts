@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SupabaseService } from './supabase.service';
-import { Tables } from '../types/supabase';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +7,7 @@ import { Tables } from '../types/supabase';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  exercises: Tables<'exercises'>[] = [];
-  title = 'angular-user-management';
+  title = 'Training Tracker';
 
   session = this.supabase.session;
 
@@ -17,15 +15,5 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.supabase.authChanges((_, session) => (this.session = session));
-
-    this.supabase.getExercises().subscribe((exercises) => {
-      this.exercises = exercises;
-
-      console.log('exercises: ', this.exercises);
-    });
-
-    // (async () => {
-    //   this.exercises = (await this.supabase.getExercises()).data;
-    // })();
   }
 }

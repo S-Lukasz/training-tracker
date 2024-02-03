@@ -1,14 +1,11 @@
-<div class="trainings">
-    <h2>Your trainings</h2>
+<div class="trainings" >
+    <h2 >Your trainings</h2>
 
-    <button class="training-item-add"> 
-        + Add new
-    </button>
-
-    <div class="training-item-parent">
-        <app-training-item></app-training-item>
-        <app-training-item></app-training-item>
-        <app-training-item></app-training-item>
+    <div class="training-items">
+        <button class="training-item-add-btn"> 
+            + Add new
+        </button>
+        <app-training-item *ngFor="let training of trainings" [training]="training"></app-training-item>
     </div>
     
 </div>

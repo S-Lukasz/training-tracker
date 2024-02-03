@@ -1,15 +1,6 @@
-<div class="container" style="padding: 50px 0 100px 0" > 
+<app-header [title]="title"></app-header> 
 
-  <router-outlet></router-outlet>
-
-  <!-- <p *ngFor="let e of exercises" >{{e.id}}</p> -->
-
-  
- 
-  <!-- <app-account *ngIf="session; else auth" [session]="session"></app-account>
-  <ng-template #auth>
-    <app-auth></app-auth>
-  </ng-template> -->
+<div class="container">
+    <router-outlet></router-outlet>
 </div>
-
-<!-- [ngIf]="exercises" -->
+    
