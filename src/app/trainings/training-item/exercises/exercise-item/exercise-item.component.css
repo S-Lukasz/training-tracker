@@ -1,0 +1,82 @@
+
+
+.exercise-item-btn
+{
+    display: flex;
+    text-align: center;
+    margin: auto;
+    width: 40%;
+    background-color: #19252b;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all;
+    transition-duration: 300ms;
+    margin-top: 20px;
+    padding-bottom: 15px;
+}
+
+.exercise-item-btn:hover
+{
+    background-color: #121e24;
+    box-shadow: 1px 1px 20px rgb(11, 16, 22);
+}
+
+.sets-label {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    padding-left: 30px;
+    text-align: center;
+    font-size: small;
+    width: 100%;
+    color: rgb(163, 163, 163);
+}
+
+.exercise-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.exercise-left {
+    padding-left: 30px;
+    display: flex;
+
+}
+
+.muscle-label {
+    padding-left: 30px;
+}   
+
+.equipment-label {
+    padding-left: 30px;
+}
+
+.set-title {
+    color: rgb(231, 231, 231);
+    font-size: medium;
+    text-align: left;
+}
+
+.set-data {
+
+}
+
+.exercise-title
+{    
+    text-align: left;
+    padding-top: 15px;
+    padding-left: 20px;
+    font-size: large;
+    color: rgb(231, 231, 231);
+    width: 100%;
+}
+
+.exercise-name
+{
+    padding-top: 5px;
+    padding-left: 30px;
+    text-align: left;
+    font-size: medium;
+    color: rgb(138, 141, 148);
+    width: 100%;
+}

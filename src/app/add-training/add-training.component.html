@@ -1,0 +1,6 @@
+<div class="form-control">
+    <button (click)="onCloseClick()"><fa-icon class="form-close" [icon]="faXmark"></fa-icon></button>
+    <label class="form-title" for="text">Training</label>
+    <input class="form-input" type="text" name="text" [(ngModel)]="trainingName" id="text" placeholder="New training name">
+    <button class="form-btn" (click)="onAddClick()">Add</button>
+</div>

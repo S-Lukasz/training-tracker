@@ -1,16 +1,27 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { Training } from '../../my-data';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SharedService {
-  onTrainingSelect: EventEmitter<Training> = new EventEmitter<Training>();
+  onTrainingAddView: EventEmitter<boolean> = new EventEmitter<boolean>();
+  onTrainingAdd: EventEmitter<string> = new EventEmitter<string>();
+  onTrainingRemove: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() {}
 
-  emitTrainingSelected(training: Training): void {
-    this.onTrainingSelect.emit(training);
-    console.log('emitTrainingSelected: ', training);
+  isViewActive: boolean = false;
+
+  emitTrainingView(): void {
+    this.isViewActive = !this.isViewActive;
+    this.onTrainingAddView.emit(this.isViewActive);
+  }
+
+  emitTrainingToRemove(id: number): void {
+    this.onTrainingRemove.emit(id);
+  }
+
+  emitTrainingToAdd(name: string): void {
+    this.onTrainingAdd.emit(name);
   }
 }

@@ -1,32 +1,29 @@
 <div class="exercise" >
-
     <h2>Exercise Name</h2>
 
-    <div>
-        <button class="exercise-item"> 
-            <h3>Muscle:</h3>
-            <h4 [ngStyle]="{'color': 'gray'}">{{exerciseData?.muscles?.name}}</h4>
-        </button>
-    
-        <button class="exercise-item"> 
-            <h3>Equipment</h3>
-            <h4 [ngStyle]="{'color': 'gray'}">{{exerciseData?.equipments?.name}}</h4>
-        </button>
-    
-        <button class="sets-label"> 
-            <div class="sets-label-item" *ngFor="let set of setsData; let i = index">
-                <h3>Set {{i + 1}}</h3>
-                <h4 [ngStyle]="{'color': 'lightgray'}">Reps: {{set?.reps}}  /  Weight: {{set?.weight}} kg</h4>
-            </div>
-            <button class="sets-label-button"> 
-                + New set
-            </button>
-        
-        </button>
+    <button class="exercise-item"> 
+        <h2>Muscle</h2>
+        <h3 [ngStyle]="{'color': 'gray'}">{{exerciseData?.muscles?.name}}</h3>
+    </button>
 
-        <button routerLink="/training-view" class="exercise-item"> 
-            <h4> Back </h4>
+    <button class="exercise-item"> 
+        <h2>Equipment</h2>
+        <h3 [ngStyle]="{'color': 'gray'}">{{exerciseData?.equipments?.name}}</h3>
+    </button>
+
+    <div class="sets-label"> 
+        <h2>Sets</h2>
+        <div class="sets-label-item" *ngFor="let set of setsData; let i = index">
+            <h3 class="set-item-title">{{i + 1}}</h3>
+            <h3 class="set-item-reps">Reps: {{set?.reps}}  /  Weight: {{set?.weight}} kg</h3>
+        </div>
+        <button class="set-item-add"> 
+            + Add set
         </button>
     </div>
 
+    <button class="back-btn" [routerLink]="['/training-view']" [queryParams]="{trainingId: exerciseData?.training_id?.toString()}"> 
+        <fa-icon  class="back-btn-icon" [icon]="faAngleLeft"> </fa-icon>
+        Back
+    </button>
 </div>

@@ -114,6 +114,7 @@ export class SupabaseService {
         `id, 
         muscle_id, 
         equipment_id, 
+        training_id,
         muscles(name), 
         equipments(name)`
       )
@@ -151,6 +152,36 @@ export class SupabaseService {
         .from('trainings')
         .select()
         .then(({ data }) => observer.next(data as any));
+    });
+
+    return response;
+  }
+
+  addTraining(name: string): Observable<Tables<'trainings'>> {
+    const request = this.supabase
+      .from('trainings')
+      .insert([
+        {
+          name: name,
+          date: new Date().toDateString(),
+        },
+      ])
+      .select()
+      .limit(1)
+      .single();
+
+    const response = new Observable<Tables<'trainings'>>((observer) => {
+      request.then(({ data }) => observer.next(data as any));
+    });
+
+    return response;
+  }
+
+  removeTraining(id: number): Observable<Tables<'trainings'>> {
+    const request = this.supabase.from('trainings').delete().eq('id', id);
+
+    const response = new Observable<Tables<'trainings'>>((observer) => {
+      request.then(({ data }) => observer.next(data as any));
     });
 
     return response;

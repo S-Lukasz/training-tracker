@@ -1,6 +1,7 @@
 import { Component, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SupabaseService } from '../supabase.service';
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-exercise-view',
@@ -11,6 +12,8 @@ export class ExerciseViewComponent {
   @Output() exerciseId?: number;
   @Output() exerciseData?: any;
   @Output() setsData?: any;
+
+  faAngleLeft = faAngleLeft;
 
   constructor(
     private route: ActivatedRoute,

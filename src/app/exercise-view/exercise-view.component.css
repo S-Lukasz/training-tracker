@@ -1,0 +1,142 @@
+.exercise {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    margin-top: 60px;
+    color: white;
+    width: 40%;
+}
+
+
+.exercise-item
+{
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    background-color: #19252b;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all;
+    transition-duration: 300ms;
+    margin-top: 20px;
+}
+
+.exercise-item:hover
+{
+    background-color: #121e24;
+    box-shadow: 1px 1px 20px rgb(11, 16, 22);
+}
+
+.set-item-add {
+    width: 100%;
+    color: white;
+    background-color: #19252b;
+    font-size: medium;
+    cursor: pointer;
+    font-weight: normal;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.set-item-add:hover {
+    background-color: #121e24;
+    box-shadow: 1px 1px 20px rgb(11, 16, 22);
+}
+
+.sets-label {
+    text-align: left;
+    font-size: small;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background-color: #19252b;
+
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+h2 {
+    padding: 10px;
+    padding-left: 20px;
+}
+h3 {
+    padding-left: 20px;
+    padding-bottom: 15px;
+}
+
+.back-btn {
+    display: flex;
+}
+
+.sets-label-item {
+    display: flex;
+    color: white;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    background-color: #19252b;
+    cursor: pointer;
+    transition: all;
+    padding-top: 20px;
+    transition-duration: 300ms;
+    border-bottom: 1px solid rgb(68, 72, 80);
+}
+
+
+.sets-label-item:hover {
+    background-color: #121e24;
+    box-shadow: 1px 1px 20px rgb(11, 16, 22);
+}
+
+.set-item-title {
+    text-align: left;
+    color: rgb(185, 185, 185);
+}
+
+.set-item-reps {
+    padding-left: 30px;
+    text-align: center;
+    color: rgb(185, 185, 185);
+}
+
+.exercise-name
+{
+    padding-top: 15px;
+    font-size: large;
+    color: rgb(231, 231, 231);
+
+    width: 100%;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-size: medium;
+    margin: auto;
+    width: 100%;
+    background-color: #19252b;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all;
+    padding: 20px;
+    transition-duration: 300ms;
+    margin-top: 20px;
+}
+
+.back-btn:hover {
+    background-color: #121e24;
+    box-shadow: 1px 1px 20px rgb(11, 16, 22);
+}
+
+.back-btn-icon {
+    padding-right: 15px;
+}

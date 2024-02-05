@@ -20,6 +20,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ExerciseViewComponent } from './exercise-view/exercise-view.component';
 import { HeaderComponent } from './header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AddTrainingComponent } from './add-training/add-training.component';
 
 const appRoutes: Routes = [
   { path: '', component: TrainingsComponent },
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
     TrainingViewComponent,
     ExerciseViewComponent,
     HeaderComponent,
+    AddTrainingComponent,
   ],
   imports: [
     BrowserModule,

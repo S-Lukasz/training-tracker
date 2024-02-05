@@ -10,7 +10,7 @@ export class ExerciseItemComponent implements OnInit {
   @Input() index!: number;
   @Input() exercise?: any;
   @Input() trainingId?: number;
-  @Output() exerciseSets!: any[];
+  @Output() exerciseSets?: any[];
 
   constructor(private supabaseService: SupabaseService) {}
 

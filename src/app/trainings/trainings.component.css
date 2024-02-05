@@ -4,16 +4,15 @@
     align-items: center;
     justify-content: flex-start;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 30px;
+    margin-bottom: 60px;
 }
 
-.training-items
-{
+.training-items {
     margin-top: 30px;
 }
 
-.training-item-add-btn
-{
+.training-item-add-btn {
     text-align: center;
     width: 100%;
     background-color: #19252b;
@@ -27,17 +26,7 @@
     transition-duration: 300ms;
 }
 
-.training-item-add-btn:hover
-{
+.training-item-add-btn:hover {
     background-color: #121e24;
     box-shadow: 1px 1px 20px rgb(11, 16, 22);
-}
-
-.training-item-name
-{
-    padding-left: 10px;
-    width: fit-content;
-    height: fit-content;
-    color: rgb(231, 231, 231);
-    text-align: left;
 }

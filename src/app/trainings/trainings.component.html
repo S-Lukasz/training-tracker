@@ -2,9 +2,13 @@
     <h2 >Your trainings</h2>
 
     <div class="training-items">
-        <button class="training-item-add-btn"> 
-            + Add new
+        <button *ngIf="!showAddView" class="training-item-add-btn" (click)="onAddViewShow()"> 
+            + Add training
         </button>
+        <div>
+            <app-add-training *ngIf="showAddView"></app-add-training>
+        </div>
+        
         <app-training-item *ngFor="let training of trainings" [training]="training"></app-training-item>
     </div>
     

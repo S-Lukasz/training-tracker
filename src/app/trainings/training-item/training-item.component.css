@@ -20,55 +20,65 @@
     box-shadow: 1px 1px 20px rgb(11, 16, 22);
 }
 
-.training-item-name
-{
-    padding-left: 10px;
-    width: fit-content;
-    height: fit-content;
+.training-item-name {
+    padding: 5px;
+    font-size: 1.35rem;
     color: rgb(231, 231, 231);
     text-align: left;
 }
+
+.exercises-item-name {
+    padding-top: 15px;
+    padding-left: 5px;
+    font-size: medium;
+    color: rgb(139, 139, 139);
+    text-align: left;
+}
+
 
 .training-item-left {
     display: flex;
     flex-direction: column;
     color: rgb(139, 139, 139);
-
-    width: fit-content;
-    height: fit-content;
+    padding-left: 20px;
+    padding-top: 20px;
 }
 
 .training-item-exercises
 {
     display: flex;
+    padding-bottom: 20px;
 }
 
 .training-item-exercise
 {
+    display: flex;
     padding-left: 10px;
+
 }
 
 .training-item-exercises-break {
-    
-    padding-left: 5px;
-    background-color: blue;
+    padding-left: 10px;
+    height: 100%;
 }
-
 
 .training-item-right {
     display: flex;
     color: rgb(139, 139, 139);
     justify-items: center;
+    padding-right: 30px;
+    padding-top: 30px;
 }
 
 
 .training-item-date
 {
-    padding-left: 10px;
+    font-size: large;
     color: rgb(139, 139, 139);
+    padding-right: 10px;
 }
 
 .training-item-icon {
-    padding: 10px;
-    padding-top: 18px;
+
+    font-size: large;
 }
