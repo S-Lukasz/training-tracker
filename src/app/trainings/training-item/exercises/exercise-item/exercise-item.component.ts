@@ -1,5 +1,6 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SupabaseService } from '../../../../supabase.service';
+import { faChevronRight, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-exercise-item',
@@ -7,10 +8,15 @@ import { SupabaseService } from '../../../../supabase.service';
   styleUrl: './exercise-item.component.css',
 })
 export class ExerciseItemComponent implements OnInit {
+  exerciseSets?: any[];
+
   @Input() index!: number;
   @Input() exercise?: any;
-  @Input() trainingId?: number;
-  @Output() exerciseSets?: any[];
+
+  @Output() onExerciseRemove: EventEmitter<number> = new EventEmitter<number>();
+
+  faTrash = faTrash;
+  faChevronRight = faChevronRight;
 
   constructor(private supabaseService: SupabaseService) {}
 
@@ -20,5 +26,9 @@ export class ExerciseItemComponent implements OnInit {
         .getExerciseSets(this.exercise?.id)
         .subscribe((sets) => (this.exerciseSets = sets));
     }
+  }
+
+  onExerciseRemoveClick() {
+    this.onExerciseRemove.emit(this.exercise?.id);
   }
 }

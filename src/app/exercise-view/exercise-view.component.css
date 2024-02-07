@@ -1,142 +1,190 @@
 .exercise {
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
-    margin-top: 60px;
-    color: white;
-    width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  margin-top: 60px;
+  color: white;
+  width: 40%;
+  position: relative;
 }
 
-
-.exercise-item
-{
-    display: flex;
-    color: white;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    margin: auto;
-    width: 100%;
-    background-color: #19252b;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all;
-    transition-duration: 300ms;
-    margin-top: 20px;
+.exercise-item {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  background-color: #19252b;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all;
+  transition-duration: 300ms;
+  margin-top: 20px;
 }
 
-.exercise-item:hover
-{
-    background-color: #121e24;
-    box-shadow: 1px 1px 20px rgb(11, 16, 22);
+.exercise-item:hover {
+  background-color: #121e24;
+  box-shadow: 1px 1px 20px rgb(11, 16, 22);
 }
 
 .set-item-add {
-    width: 100%;
-    color: white;
-    background-color: #19252b;
-    font-size: medium;
-    cursor: pointer;
-    font-weight: normal;
-    padding: 10px;
-    border-radius: 10px;
+  width: 100%;
+  color: rgb(189, 189, 189);
+  background-color: #19252b;
+  font-size: medium;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all;
+  transition-duration: 300ms;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 1rem;
 }
 
 .set-item-add:hover {
-    background-color: #121e24;
-    box-shadow: 1px 1px 20px rgb(11, 16, 22);
+  color: rgb(231, 231, 231);
+  background-color: #121e24;
+  box-shadow: 1px 1px 20px rgb(11, 16, 22);
 }
 
 .sets-label {
-    text-align: left;
-    font-size: small;
-    width: 100%;
-    color: rgb(255, 255, 255);
-    background-color: #19252b;
+  text-align: left;
+  font-size: small;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  background-color: #19252b;
 
-    border-radius: 10px;
-    margin-top: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
 h2 {
-    padding: 10px;
-    padding-left: 20px;
+  padding: 10px;
+  padding-left: 20px;
 }
 h3 {
-    padding-left: 20px;
-    padding-bottom: 15px;
+  padding-left: 20px;
+  padding-bottom: 15px;
 }
 
 .back-btn {
-    display: flex;
-}
-
-.sets-label-item {
-    display: flex;
-    color: white;
-    align-items: center;
-    text-align: center;
-    margin: auto;
-    background-color: #19252b;
-    cursor: pointer;
-    transition: all;
-    padding-top: 20px;
-    transition-duration: 300ms;
-    border-bottom: 1px solid rgb(68, 72, 80);
-}
-
-
-.sets-label-item:hover {
-    background-color: #121e24;
-    box-shadow: 1px 1px 20px rgb(11, 16, 22);
-}
-
-.set-item-title {
-    text-align: left;
-    color: rgb(185, 185, 185);
-}
-
-.set-item-reps {
-    padding-left: 30px;
-    text-align: center;
-    color: rgb(185, 185, 185);
-}
-
-.exercise-name
-{
-    padding-top: 15px;
-    font-size: large;
-    color: rgb(231, 231, 231);
-
-    width: 100%;
-}
-
-.back-btn {
-    display: flex;
-    align-items: center;
-    color: white;
-    text-align: center;
-    font-size: medium;
-    margin: auto;
-    width: 100%;
-    background-color: #19252b;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all;
-    padding: 20px;
-    transition-duration: 300ms;
-    margin-top: 20px;
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  padding: 5px;
+  padding-inline: 10px;
+  background-color: #19252b;
+  font-size: large;
+  font-weight: bold;
+  color: rgb(190, 190, 190);
+  transition: all;
+  transition-duration: 300ms;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .back-btn:hover {
-    background-color: #121e24;
-    box-shadow: 1px 1px 20px rgb(11, 16, 22);
+  background-color: #121e24;
+  color: rgb(231, 231, 231);
+  box-shadow: 1px 1px 20px rgb(11, 16, 22);
 }
 
+.set-remove-btn {
+  background-color: #19252b;
+  font-size: medium;
+  font-weight: bold;
+  color: rgb(133, 140, 145);
+  transition: all;
+  transition-duration: 300ms;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.set-remove-btn:hover {
+  color: rgb(231, 231, 231);
+}
+
+.sets-label-button {
+  display: flex;
+  letter-spacing: 0.5px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: rgb(185, 185, 185);
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  background-color: #19252b;
+  cursor: pointer;
+  transition: all;
+  padding-top: 10px;
+  padding-right: 10px;
+  margin-right: 30px;
+  transition-duration: 300ms;
+}
+
+.sets-label-item {
+  display: flex;
+  padding-inline: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(68, 72, 80);
+}
+
+.sets-label-item-last {
+  display: flex;
+  padding-inline: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.sets-label-button:hover {
+  background-color: #121e24;
+  color: rgb(231, 231, 231);
+  box-shadow: 1px 1px 20px rgb(11, 16, 22);
+}
+
+.set-item-title {
+  text-align: left;
+}
+
+.set-item-info {
+  width: 10rem;
+  text-align: center;
+}
+
+.exercise-name {
+  padding-top: 15px;
+  font-size: large;
+  color: rgb(231, 231, 231);
+
+  width: 100%;
+}
+
+/* .back-btn {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-size: medium;
+  margin: auto;
+  width: 100%;
+  background-color: #19252b;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all;
+  padding: 20px;
+  transition-duration: 300ms;
+  margin-top: 20px;
+} */
+
 .back-btn-icon {
-    padding-right: 15px;
+  padding-right: 5px;
 }

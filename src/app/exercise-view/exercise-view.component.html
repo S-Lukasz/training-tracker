@@ -1,29 +1,57 @@
-<div class="exercise" >
-    <h2>Exercise Name</h2>
+<app-set-dialog
+  (onSetAdd)="onSetAdd($event)"
+  [changingDialog]="changingDialogActive"
+></app-set-dialog>
 
-    <button class="exercise-item"> 
-        <h2>Muscle</h2>
-        <h3 [ngStyle]="{'color': 'gray'}">{{exerciseData?.muscles?.name}}</h3>
-    </button>
+<div class="exercise">
+  <h2>
+    {{ trainingData?.name }} <fa-icon [icon]="faAngleRight"> </fa-icon> Exercise
+    {{ index + 1 }}
+  </h2>
 
-    <button class="exercise-item"> 
-        <h2>Equipment</h2>
-        <h3 [ngStyle]="{'color': 'gray'}">{{exerciseData?.equipments?.name}}</h3>
-    </button>
+  <button
+    class="back-btn"
+    [routerLink]="['/training-view']"
+    [queryParams]="{ trainingId: exerciseData?.training_id?.toString() }"
+  >
+    <fa-icon class="back-btn-icon" [icon]="faAngleLeft"> </fa-icon>
+    Back
+  </button>
 
-    <div class="sets-label"> 
-        <h2>Sets</h2>
-        <div class="sets-label-item" *ngFor="let set of setsData; let i = index">
-            <h3 class="set-item-title">{{i + 1}}</h3>
-            <h3 class="set-item-reps">Reps: {{set?.reps}}  /  Weight: {{set?.weight}} kg</h3>
-        </div>
-        <button class="set-item-add"> 
-            + Add set
-        </button>
+  <button class="exercise-item">
+    <h2>Muscle</h2>
+    <h3 [ngStyle]="{ color: 'gray' }">{{ exerciseData?.muscles?.name }}</h3>
+  </button>
+
+  <button class="exercise-item">
+    <h2>Equipment</h2>
+    <h3 [ngStyle]="{ color: 'gray' }">{{ exerciseData?.equipments?.name }}</h3>
+  </button>
+
+  <div class="sets-label" *ngIf="setsData">
+    <h2>Sets</h2>
+    <div
+      *ngFor="let set of setsData; let i = index"
+      [ngClass]="{
+        'sets-label-item': i !== setsData.length - 1,
+        'sets-label-item-last': i === setsData.length - 1
+      }"
+    >
+      <button class="sets-label-button" (click)="onEditSetSelect(i)">
+        <h3 class="set-item-title">{{ i + 1 }}</h3>
+        <h3 class="set-item-info">Reps: {{ set?.reps }}</h3>
+        <h3 class="set-item-info">Weight: {{ set?.weight }} kg</h3>
+      </button>
+
+      <button class="set-remove-btn" (click)="onSetRemoveClick(i)">
+        <fa-icon [icon]="faTrash"></fa-icon>
+      </button>
     </div>
-
-    <button class="back-btn" [routerLink]="['/training-view']" [queryParams]="{trainingId: exerciseData?.training_id?.toString()}"> 
-        <fa-icon  class="back-btn-icon" [icon]="faAngleLeft"> </fa-icon>
-        Back
-    </button>
+  </div>
+  <button class="set-item-add" (click)="onSetDialogView()">+ Add set</button>
 </div>
+
+<!-- [ngClass]="{
+  'alert-confirm-btn-enabled': isDialogValid,
+  'alert-confirm-btn-disabled': !isDialogValid
+}" -->

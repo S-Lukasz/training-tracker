@@ -1,19 +1,34 @@
-<div class="training-item" >
-    <button class="training-item-btn" [routerLink]="['/training-view']" [queryParams]="{trainingId: training?.id?.toString()}" > 
-        <div class="training-item-left">
-            <h2 class="training-item-name">{{training?.name}}</h2>
-            <h4 class="exercises-item-name">Exercises:</h4>
-            <div class="training-item-exercises">
-                <h3 class="training-item-exercise" *ngFor="let exercise of trainingData?.exercises; let i=index">
-                    {{exercise.muscles?.name}}
-                    <h4 class="training-item-exercises-break" *ngIf="trainingData?.exercises?.length > 1 && i !== trainingData?.exercises?.length - 1"> / </h4>
-                </h3> 
-            </div>
-        </div>
-        
-        <div class="training-item-right">
-            <h3 class="training-item-date">{{training?.date}}</h3>
-            <fa-icon class="training-item-icon" [icon]="faAngleRight"></fa-icon>
-        </div>
-    </button>
+<div class="training-item">
+  <button
+    class="training-item-btn"
+    [routerLink]="['/training-view']"
+    [queryParams]="{ trainingId: training?.id?.toString() }"
+  >
+    <div class="training-item-left">
+      <h2 class="training-item-name">{{ training?.name }}</h2>
+      <h4 class="exercises-item-name">Exercises:</h4>
+      <div class="training-item-exercises">
+        <h3
+          class="training-item-exercise"
+          *ngFor="let exercise of trainingData?.exercises; let i = index"
+        >
+          {{ exercise.muscles?.name }}
+          <h4
+            class="training-item-exercises-break"
+            *ngIf="
+              trainingData?.exercises?.length > 1 &&
+              i !== trainingData?.exercises?.length - 1
+            "
+          >
+            /
+          </h4>
+        </h3>
+      </div>
+    </div>
+
+    <div class="training-item-right">
+      <h3 class="training-item-date">{{ training?.date }}</h3>
+      <fa-icon class="training-item-icon" [icon]="faAngleRight"></fa-icon>
+    </div>
+  </button>
 </div>

@@ -146,6 +146,30 @@ export class SupabaseService {
     return response;
   }
 
+  getMuscles() {
+    const request = this.supabase.from('muscles').select(`id, name`);
+
+    type ExerciseSetsData = QueryData<typeof request>;
+
+    const response = new Observable<ExerciseSetsData>((observer) => {
+      request.then(({ data }) => observer.next(data as any));
+    });
+
+    return response;
+  }
+
+  getEquipments() {
+    const request = this.supabase.from('equipments').select(`id, name`);
+
+    type ExerciseSetsData = QueryData<typeof request>;
+
+    const response = new Observable<ExerciseSetsData>((observer) => {
+      request.then(({ data }) => observer.next(data as any));
+    });
+
+    return response;
+  }
+
   getTrainings() {
     const response = new Observable<Tables<'trainings'>[]>((observer) => {
       this.supabase
@@ -181,6 +205,81 @@ export class SupabaseService {
     const request = this.supabase.from('trainings').delete().eq('id', id);
 
     const response = new Observable<Tables<'trainings'>>((observer) => {
+      request.then(({ data }) => observer.next(data as any));
+    });
+
+    return response;
+  }
+
+  removeSet(id: number): Observable<Tables<'sets'>> {
+    console.log('removeSet: ', id);
+    const request = this.supabase.from('sets').delete().eq('id', id);
+
+    const response = new Observable<Tables<'sets'>>((observer) => {
+      request.then(({ data }) => observer.next(data as any));
+    });
+
+    return response;
+  }
+
+  addExercise(muscleId?: number, equipmentId?: number, trainingId?: number) {
+    const request = this.supabase
+      .from('exercises')
+      .insert({
+        muscle_id: muscleId,
+        equipment_id: equipmentId,
+        training_id: trainingId,
+      })
+      .select(
+        `id, 
+        muscle_id, 
+        equipment_id, 
+        training_id,
+        muscles(name), 
+        equipments(name)`
+      )
+      .limit(1)
+      .single();
+
+    type ExerciseData = QueryData<typeof request>;
+
+    const response = new Observable<ExerciseData>((observer) => {
+      request.then(({ data }) => observer.next(data as any));
+    });
+
+    return response;
+  }
+
+  addSet(reps: number, weight: number, exerciseId: number) {
+    const request = this.supabase
+      .from('sets')
+      .insert({
+        reps: reps,
+        weight: weight,
+        exercise_id: exerciseId,
+      })
+      .select(
+        `reps, 
+        weight, 
+        exercise_id
+        `
+      )
+      .limit(1)
+      .single();
+
+    type SetsData = QueryData<typeof request>;
+
+    const response = new Observable<SetsData>((observer) => {
+      request.then(({ data }) => observer.next(data as any));
+    });
+
+    return response;
+  }
+
+  removeExercise(id: number): Observable<Tables<'exercises'>> {
+    const request = this.supabase.from('exercises').delete().eq('id', id);
+
+    const response = new Observable<Tables<'exercises'>>((observer) => {
       request.then(({ data }) => observer.next(data as any));
     });
 

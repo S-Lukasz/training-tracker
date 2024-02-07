@@ -21,6 +21,8 @@ import { ExerciseViewComponent } from './exercise-view/exercise-view.component';
 import { HeaderComponent } from './header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddTrainingComponent } from './add-training/add-training.component';
+import { DialogBoxComponent } from './dialog-box/dialog-box.component';
+import { SetDialogComponent } from './set-dialog/set-dialog.component';
 
 const appRoutes: Routes = [
   { path: '', component: TrainingsComponent },
@@ -42,6 +44,8 @@ const appRoutes: Routes = [
     ExerciseViewComponent,
     HeaderComponent,
     AddTrainingComponent,
+    DialogBoxComponent,
+    SetDialogComponent,
   ],
   imports: [
     BrowserModule,

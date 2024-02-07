@@ -34,7 +34,6 @@ export class TrainingsComponent implements OnInit {
 
     this.sharedService.onTrainingAddView.subscribe((isViewActive) => {
       this.showAddView = isViewActive;
-      console.log('showAddView: ', this.showAddView);
     });
   }
 

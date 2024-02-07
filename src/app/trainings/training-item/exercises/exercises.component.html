@@ -1,11 +1,22 @@
-<div class="exercises" >
-    <button class="exercise-action-btn"> 
-        + Add exercise
-    </button>
+<app-dialog-box
+  (onExerciseAdd)="onExerciseAddSubmit($event)"
+  [showDialogElement]="showDialogElement"
+></app-dialog-box>
+<div class="exercises">
+  <button class="exercise-add-btn" (click)="onExerciseDialogEmit()">
+    + Add exercise
+  </button>
 
-    <app-exercise-item class=" bg-slate-600 w-full h-full text-pink-200 " *ngFor="let exercise of exercises; let i = index" [index]="i" [trainingId]="trainingId" [exercise]="exercise"></app-exercise-item>
+  <app-exercise-item
+    class="bg-slate-600 w-full h-full text-pink-200"
+    *ngFor="let exercise of exercises; let i = index"
+    [index]="i"
+    [exercise]="exercise"
+    (onExerciseRemove)="onExerciseRemoveSubmit($event)"
+  ></app-exercise-item>
 
-    <button routerLink="/" class="exercise-action-btn"> 
-        Back 
-    </button>
+  <button class="exercise-back-btn" routerLink="/">
+    <fa-icon class="back-btn-icon" [icon]="faAngleLeft"> </fa-icon>
+    Back
+  </button>
 </div>

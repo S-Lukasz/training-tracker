@@ -4,12 +4,13 @@ import { EventEmitter, Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class SharedService {
-  onTrainingAddView: EventEmitter<boolean> = new EventEmitter<boolean>();
   onTrainingAdd: EventEmitter<string> = new EventEmitter<string>();
   onTrainingRemove: EventEmitter<number> = new EventEmitter<number>();
+  onTrainingAddView: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() {}
 
+  currentTrainingId?: number;
   isViewActive: boolean = false;
 
   emitTrainingView(): void {

@@ -1,18 +1,39 @@
-<button class="exercise-item-btn" [routerLink]="['/exercise-view']" [queryParams]="{exerciseId: exercise?.id?.toString()}"> 
-    <div class="exercise-right">
-        <h4 *ngFor="let set of exerciseSets; let i = index" class="sets-label">
-            <h3 class="set-title">Set {{i + 1}}:</h3>
-            <h4 class="set-data">reps {{set?.reps}} - weight {{set?.weight}}kg</h4>
-        </h4>
+<div class="exercise-item">
+  <div class="exercise-right">
+    <h4 *ngFor="let set of exerciseSets; let i = index" class="sets-label">
+      <h3 class="set-title">Set {{ i + 1 }}:</h3>
+      <h4 class="set-data">
+        reps {{ set?.reps }} - weight {{ set?.weight }}kg
+      </h4>
+    </h4>
+  </div>
+
+  <div class="exercise-left">
+    <div class="muscle-label">
+      <h3 class="exercise-title">Muscle</h3>
+      <h4 class="exercise-name">{{ exercise?.muscles?.name }}</h4>
     </div>
-    <div class="exercise-left">
-        <div class="muscle-label">
-            <h3 class="exercise-title">Muscle</h3>
-            <h4 class="exercise-name">{{exercise?.muscles?.name}}</h4>
-        </div>
-        <div class="equipment-label">
-            <h3 class="exercise-title">Equipment  </h3>
-            <h4 class="exercise-name">{{exercise?.equipments?.name}}</h4>
-        </div>
+    <div class="equipment-label">
+      <h3 class="exercise-title">Equipment</h3>
+      <h4 class="exercise-name">{{ exercise?.equipments?.name }}</h4>
     </div>
-</button>
+  </div>
+
+  <fa-icon
+    class="exercise-remove"
+    [icon]="faTrash"
+    (click)="onExerciseRemoveClick()"
+  >
+  </fa-icon>
+  <div
+    class="exercise-edit"
+    [routerLink]="['/exercise-view']"
+    [queryParams]="{
+      exerciseId: exercise?.id?.toString(),
+      exerciseIndex: index.toString()
+    }"
+  >
+    Edit
+    <fa-icon [icon]="faChevronRight"> </fa-icon>
+  </div>
+</div>

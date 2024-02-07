@@ -1,32 +1,72 @@
 .exercises {
-    margin-top: 15px;
-    align-items: center;
+  margin-top: 15px;
+  margin: auto;
+  align-items: center;
+  position: relative;
+  width: 40%;
 }
 
-/* .exercises-title {
-    text-align: left;
-    margin-top: 15px;
-    margin: auto;
-    width: 40%;
-} */
-
-.exercise-action-btn {
-    text-align: center;
-    width: 40%;
-    padding: 15px;
-    margin: auto;
-    margin-top: 20px;
-    background-color: #19252b;
-    border-radius: 10px;
-    cursor: pointer;
-    color: rgb(231, 231, 231);
-    font-size: large;
-    font-weight: bold;
-    transition: all;
-    transition-duration: 300ms;
+.exercise-add-btn {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  padding: 15px;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #19252b;
+  border-radius: 10px;
+  cursor: pointer;
+  color: rgb(231, 231, 231);
+  font-size: large;
+  font-weight: bold;
+  transition: all;
+  transition-duration: 300ms;
 }
 
-.exercise-action-btn:hover {
-    background-color: #121e24;
-    box-shadow: 1px 1px 20px rgb(11, 16, 22);
+.exercise-add-btn:hover {
+  background-color: #121e24;
+  box-shadow: 1px 1px 20px rgb(11, 16, 22);
 }
+
+.exercise-back-btn {
+  position: absolute;
+  top: -4rem;
+  left: 0;
+  padding: 5px;
+  padding-inline: 10px;
+  background-color: #19252b;
+  font-size: large;
+  font-weight: bold;
+  color: rgb(190, 190, 190);
+  transition: all;
+  transition-duration: 300ms;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.exercise-back-btn:hover {
+  background-color: #121e24;
+  color: rgb(231, 231, 231);
+  box-shadow: 1px 1px 20px rgb(11, 16, 22);
+}
+
+.back-btn-icon {
+  padding-right: 5px;
+}
+
+/* display: flex;
+align-items: center;
+text-align: left;
+width: 40%;
+padding: 15px;
+margin: auto;
+margin-top: 20px;
+background-color: #19252b;
+border-radius: 10px;
+cursor: pointer;
+color: rgb(231, 231, 231);
+font-size: large;
+font-weight: bold;
+transition: all;
+transition-duration: 300ms; */

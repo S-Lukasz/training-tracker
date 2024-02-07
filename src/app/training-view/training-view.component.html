@@ -1,14 +1,18 @@
-<div class="training-view" >
-    <div class="training-header">
-        <div class="training-name-label">
-            <h2>{{trainingData?.name}}</h2>
-            <button class="training-date-btn">{{trainingData?.date}} <fa-icon [icon]="faPenToSquare"></fa-icon></button>
-        </div>
-        <button class="training-remove-btn" (click)="onRemoveClick()" >
-            <fa-icon [icon]="faTrash"></fa-icon>
-        </button>
+<div class="training-view">
+  <div class="training-header">
+    <div class="training-name-label">
+      <h2>{{ trainingData?.name }}</h2>
+      <button class="training-date-btn">
+        {{ trainingData?.date }} <fa-icon [icon]="faPenToSquare"></fa-icon>
+      </button>
     </div>
+    <button class="training-remove-btn" (click)="onRemoveClick()">
+      <fa-icon [icon]="faTrash"></fa-icon>
+    </button>
+  </div>
 
-    <app-exercises [trainingId]="trainingData?.id" [exercises]="trainingData?.exercises" ></app-exercises>
+  <app-exercises
+    [trainingId]="trainingData?.id"
+    [exercises]="trainingData?.exercises"
+  ></app-exercises>
 </div>
-

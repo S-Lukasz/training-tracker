@@ -1,84 +1,75 @@
 .training-item {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
-.training-item-btn
-{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    background-color: #19252b;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all;
-    transition-duration: 300ms;
+.training-item-btn {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #19252b;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all;
+  transition-duration: 300ms;
 }
 
-.training-item-btn:hover
-{
-    background-color: #121e24;
-    box-shadow: 1px 1px 20px rgb(11, 16, 22);
+.training-item-btn:hover {
+  background-color: #121e24;
+  box-shadow: 1px 1px 20px rgb(11, 16, 22);
 }
 
 .training-item-name {
-    padding: 5px;
-    font-size: 1.35rem;
-    color: rgb(231, 231, 231);
-    text-align: left;
+  padding: 5px;
+  font-size: 1.35rem;
+  color: rgb(231, 231, 231);
+  text-align: left;
 }
 
 .exercises-item-name {
-    padding-top: 15px;
-    padding-left: 5px;
-    font-size: medium;
-    color: rgb(139, 139, 139);
-    text-align: left;
+  padding-top: 15px;
+  padding-left: 5px;
+  font-size: medium;
+  color: rgb(139, 139, 139);
+  text-align: left;
 }
-
 
 .training-item-left {
-    display: flex;
-    flex-direction: column;
-    color: rgb(139, 139, 139);
-    padding-left: 20px;
-    padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  color: rgb(139, 139, 139);
+  padding-left: 20px;
+  padding-top: 20px;
 }
 
-.training-item-exercises
-{
-    display: flex;
-    padding-bottom: 20px;
+.training-item-exercises {
+  display: flex;
+  padding-bottom: 20px;
 }
 
-.training-item-exercise
-{
-    display: flex;
-    padding-left: 10px;
-
+.training-item-exercise {
+  display: flex;
+  padding-left: 10px;
 }
 
 .training-item-exercises-break {
-    padding-left: 10px;
-    height: 100%;
+  padding-left: 10px;
+  height: 100%;
 }
 
 .training-item-right {
-    display: flex;
-    color: rgb(139, 139, 139);
-    justify-items: center;
-    padding-right: 30px;
-    padding-top: 30px;
+  display: flex;
+  color: rgb(139, 139, 139);
+  justify-items: center;
+  padding-right: 30px;
+  padding-top: 30px;
 }
 
-
-.training-item-date
-{
-    font-size: large;
-    color: rgb(139, 139, 139);
-    padding-right: 10px;
+.training-item-date {
+  font-size: large;
+  color: rgb(139, 139, 139);
+  padding-right: 10px;
 }
 
 .training-item-icon {
-
-    font-size: large;
+  font-size: large;
 }

@@ -1,92 +1,91 @@
 .training-view {
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
-    margin-top: 60px;
-
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
 }
 
-.training-items
-{
-    margin-top: 30px;
+.training-items {
+  margin-top: 30px;
 }
 
 .training-header {
-    position: relative;
-    width: 40%;
-    display: flex;
-    margin: auto;
-    text-align: center;
-    align-items: center;
+  position: relative;
+  width: 40%;
+  display: flex;
+  margin: auto;
+  text-align: center;
+  align-items: center;
 }
 
 .training-name-label {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 }
 
 .training-remove-btn {
-    position: absolute;
-    right: 0;
-    margin-right: 20px;
-    font-size: large;
-    color: rgb(231, 231, 231);
-    background-color: #19252b;
-    transition: all;
-    transition-duration: 300ms;
-    cursor: pointer;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  font-size: large;
+  color: rgb(190, 190, 190);
+  background-color: #19252b;
+  padding-block: 8px;
+  padding-inline: 12px;
+  border-radius: 10px;
+  transition: all;
+  transition-duration: 300ms;
+  cursor: pointer;
 }
 
 .training-remove-btn:hover {
-    color: rgb(190, 190, 190);
-    background-color: #121e24;
-    box-shadow: 1px 1px 20px rgb(11, 16, 22);
+  color: rgb(231, 231, 231);
+  background-color: #121e24;
+  box-shadow: 1px 1px 20px rgb(11, 16, 22);
 }
 
-.training-item-add-btn
-{
-    text-align: center;
-    width: 100%;
-    background-color: #19252b;
-    border-radius: 10px;
-    cursor: pointer;
-    color: rgb(231, 231, 231);
-    padding: 30px;
-    font-size: large;
-    font-weight: bold;
-    transition: all;
-    transition-duration: 300ms;
+.training-item-add-btn {
+  text-align: center;
+  width: 100%;
+  background-color: #19252b;
+  border-radius: 10px;
+  cursor: pointer;
+  color: rgb(231, 231, 231);
+  padding: 30px;
+  font-size: large;
+  font-weight: bold;
+  transition: all;
+  transition-duration: 300ms;
 }
 
-.training-item-add-btn:hover
-{
-    background-color: #121e24;
-    box-shadow: 1px 1px 20px rgb(11, 16, 22);
+.training-item-add-btn:hover {
+  background-color: #121e24;
+  box-shadow: 1px 1px 20px rgb(11, 16, 22);
 }
 
-.training-item-name
-{
-    padding-left: 10px;
-    width: fit-content;
-    height: fit-content;
-    color: rgb(231, 231, 231);
-    text-align: left;
+.training-item-name {
+  padding-left: 10px;
+  width: fit-content;
+  height: fit-content;
+  color: rgb(231, 231, 231);
+  text-align: left;
 }
 
 .training-date-btn {
-    padding-top: 5px;
-    font-size: medium;
-    background-color: #121b1f;
-    color: rgb(175, 186, 201);
-    cursor: pointer;
-    transition: all;
-    transition-duration: 300ms;
+  padding-top: 5px;
+  font-size: medium;
+  background-color: #121b1f;
+  color: rgb(175, 186, 201);
+  cursor: pointer;
+  transition: all;
+  transition-duration: 300ms;
 }
 
 .training-date-btn:hover {
-    color: rgb(211, 222, 238);
-    text-shadow: 1px 1px 20px rgb(11, 16, 22);
+  color: rgb(211, 222, 238);
+  text-shadow: 1px 1px 20px rgb(11, 16, 22);
 }

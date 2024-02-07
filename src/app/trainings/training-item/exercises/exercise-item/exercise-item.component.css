@@ -1,82 +1,109 @@
-
-
-.exercise-item-btn
-{
-    display: flex;
-    text-align: center;
-    margin: auto;
-    width: 40%;
-    background-color: #19252b;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all;
-    transition-duration: 300ms;
-    margin-top: 20px;
-    padding-bottom: 15px;
+.exercise-item {
+  display: flex;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  background-color: #19252b;
+  border-radius: 10px;
+  transition: all;
+  transition-duration: 300ms;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  position: relative;
 }
 
-.exercise-item-btn:hover
-{
-    background-color: #121e24;
-    box-shadow: 1px 1px 20px rgb(11, 16, 22);
+.exercise-item-btn:hover {
+  background-color: #121e24;
+  box-shadow: 1px 1px 20px rgb(11, 16, 22);
 }
 
 .sets-label {
-    display: flex;
-    flex-direction: column;
-    padding-top: 15px;
-    padding-left: 30px;
-    text-align: center;
-    font-size: small;
-    width: 100%;
-    color: rgb(163, 163, 163);
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  padding-left: 60px;
+  text-align: center;
+  font-size: small;
+  width: 100%;
+  color: rgb(163, 163, 163);
 }
 
 .exercise-right {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .exercise-left {
-    padding-left: 30px;
-    display: flex;
-
+  padding-left: 30px;
+  display: flex;
 }
 
 .muscle-label {
-    padding-left: 30px;
-}   
+  padding-left: 10px;
+}
 
 .equipment-label {
-    padding-left: 30px;
+  padding-left: 30px;
 }
 
 .set-title {
-    color: rgb(231, 231, 231);
-    font-size: medium;
-    text-align: left;
+  color: rgb(231, 231, 231);
+  font-size: medium;
+  text-align: left;
 }
 
 .set-data {
-
+  display: flex;
 }
 
-.exercise-title
-{    
-    text-align: left;
-    padding-top: 15px;
-    padding-left: 20px;
-    font-size: large;
-    color: rgb(231, 231, 231);
-    width: 100%;
+.exercise-title {
+  text-align: left;
+  padding-top: 15px;
+  padding-left: 20px;
+  font-size: large;
+  color: rgb(231, 231, 231);
+  width: 100%;
 }
 
-.exercise-name
-{
-    padding-top: 5px;
-    padding-left: 30px;
-    text-align: left;
-    font-size: medium;
-    color: rgb(138, 141, 148);
-    width: 100%;
+.exercise-name {
+  padding-top: 5px;
+  padding-left: 30px;
+  text-align: left;
+  font-size: medium;
+  color: rgb(138, 141, 148);
+  width: 100%;
+}
+
+.exercise-remove {
+  position: absolute;
+  left: 0;
+  margin-top: 10px;
+  margin-left: 20px;
+  color: rgb(138, 141, 148);
+
+  cursor: pointer;
+  transition: all;
+  transition-duration: 300ms;
+}
+
+.exercise-remove:hover {
+  color: rgb(231, 231, 231);
+}
+
+.exercise-edit {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 15px;
+  margin-right: 20px;
+  color: rgb(138, 141, 148);
+
+  cursor: pointer;
+  transition: all;
+  transition-duration: 300ms;
+}
+
+.exercise-edit:hover {
+  color: rgb(231, 231, 231);
 }

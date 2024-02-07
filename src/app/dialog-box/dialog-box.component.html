@@ -1,0 +1,47 @@
+<div class="window-bg" *ngIf="showDialogElement">
+  <div class="alert-box">
+    <div class="alert-container">
+      <fa-icon
+        (click)="setDialogView()"
+        class="alert-close"
+        [icon]="faXmark"
+      ></fa-icon>
+      <h3 class="alert-box-title">Create new exercise</h3>
+      <h4 class="alert-box-desc">
+        Set your exercise data here. Click add when you're done.
+      </h4>
+      <div class="selectables">
+        <h4 class="alert-box-selectable-title">
+          Muscle:
+          <select [(ngModel)]="muscleSelectValue" class="alert-box-selectable">
+            <option *ngFor="let muscle of muscles" [value]="muscle?.id">
+              {{ muscle?.name }}
+            </option>
+          </select>
+        </h4>
+        <h4 class="alert-box-selectable-title">
+          Equipment:
+          <select
+            [(ngModel)]="equipmentSelectValue"
+            class="alert-box-selectable"
+          >
+            <option
+              *ngFor="let equipment of equipments"
+              [value]="equipment?.id"
+            >
+              {{ equipment?.name }}
+            </option>
+          </select>
+        </h4>
+      </div>
+      <button class="alert-confirm-btn-enabled" (click)="onExerciseAddEmit()">
+        Add
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- [ngClass]="{
+  'alert-confirm-btn-enabled': isDialogValid,
+  'alert-confirm-btn-disabled': !isDialogValid
+}" -->

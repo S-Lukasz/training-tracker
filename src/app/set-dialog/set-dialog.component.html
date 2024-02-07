@@ -1,0 +1,79 @@
+<div class="window-bg" *ngIf="showDialogElement">
+  <div class="alert-box">
+    <div class="alert-container">
+      <fa-icon
+        (click)="setDialogView()"
+        class="alert-close"
+        [icon]="faXmark"
+      ></fa-icon>
+
+      <div class="alert-label" *ngIf="!editSet">
+        <h3 class="alert-box-title">Create new set</h3>
+        <h4 class="alert-box-desc">
+          Set your set data here. Click add when you're done.
+        </h4>
+
+        <div class="selectables">
+          <h4 class="alert-box-selectable-title">
+            Reps:
+            <select [(ngModel)]="repsSelectValue" class="alert-box-selectable">
+              <option *ngFor="let rep of reps" [value]="rep">
+                {{ rep }}
+              </option>
+            </select>
+          </h4>
+
+          <h4 class="alert-box-selectable-title">
+            Weight:
+            <select
+              [(ngModel)]="weightSelectValue"
+              class="alert-box-selectable"
+            >
+              <option *ngFor="let weight of weights" [value]="weight">
+                {{ weight }} kg
+              </option>
+            </select>
+          </h4>
+        </div>
+
+        <button class="alert-confirm-btn-enabled" (click)="onExerciseAddEmit()">
+          Add
+        </button>
+      </div>
+
+      <div class="alert-label" *ngIf="editSet">
+        <h3 class="alert-box-title">Edit set {{ getEditedSetIndex() }}</h3>
+        <h4 class="alert-box-desc">
+          Edit your set data here. Click save when you're done.
+        </h4>
+
+        <div class="selectables">
+          <h4 class="alert-box-selectable-title">
+            Reps:
+            <select [(ngModel)]="repsSelectValue" class="alert-box-selectable">
+              <option *ngFor="let rep of reps" [value]="rep">
+                {{ rep }}
+              </option>
+            </select>
+          </h4>
+
+          <h4 class="alert-box-selectable-title">
+            Weight:
+            <select
+              [(ngModel)]="weightSelectValue"
+              class="alert-box-selectable"
+            >
+              <option *ngFor="let weight of weights" [value]="weight">
+                {{ weight }} kg
+              </option>
+            </select>
+          </h4>
+        </div>
+
+        <button class="alert-confirm-btn-enabled" (click)="onExerciseAddEmit()">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
