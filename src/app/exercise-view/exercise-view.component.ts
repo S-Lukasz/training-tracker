@@ -21,6 +21,12 @@ export class ExerciseViewComponent {
   trainingData?: any;
   setsData?: any[];
 
+  muscles: any[] = [];
+  equipments: any[] = [];
+
+  muscleSelectValue?: number;
+  equipmentSelectValue?: number;
+
   faTrash = faTrash;
   faAngleLeft = faAngleLeft;
   faAngleRight = faAngleRight;
@@ -38,6 +44,14 @@ export class ExerciseViewComponent {
       this.exerciseId = params['exerciseId'];
       if (this.exerciseId) this.setExerciseData(this.exerciseId);
     });
+
+    this.supabaseService.getMuscles().subscribe((muscles) => {
+      this.muscles = muscles;
+    });
+
+    this.supabaseService.getEquipments().subscribe((equipments) => {
+      this.equipments = equipments;
+    });
   }
 
   setExerciseData(exerciseId: number): void {
@@ -46,13 +60,19 @@ export class ExerciseViewComponent {
     });
 
     this.supabaseService.getExerciseData(exerciseId).subscribe((data) => {
-      this.exerciseData = data;
+      this.dataSetup(data);
       this.supabaseService
         .getTrainingData(this.exerciseData?.training_id)
         .subscribe((data) => {
           this.trainingData = data;
         });
     });
+  }
+
+  dataSetup(data: any) {
+    this.exerciseData = data;
+    this.muscleSelectValue = this.exerciseData?.muscles?.id;
+    this.equipmentSelectValue = this.exerciseData?.equipments?.id;
   }
 
   onEditSetSelect(setIndex: number) {
@@ -79,14 +99,50 @@ export class ExerciseViewComponent {
         });
   }
 
-  onSetRemoveClick(setIndex: number) {
-    this.supabaseService
-      .removeSet(this.setsData?.at(setIndex)?.id)
-      .subscribe((removedSet) => {
-        this.setsData = this.setsData?.filter(
-          (set) => set.id !== removedSet.id
-        );
-        console.log('onSetRemoveClick:', removedSet.id);
-      });
+  onSetEdit(setToEdit: SetToAdd) {
+    if (setToEdit.id && this.exerciseId) {
+      this.supabaseService
+        .editSet(
+          this.setsData?.at(setToEdit?.id)?.id,
+          setToEdit?.reps,
+          setToEdit?.weight
+        )
+        .subscribe((editedSet) => {
+          if (setToEdit.id && this.setsData) {
+            this.setsData[setToEdit?.id] = editedSet;
+          }
+          this.onSetDialogView();
+        });
+    }
+  }
+
+  onSetRemoveClick(setId: number) {
+    this.supabaseService.removeSet(setId).subscribe(() => {
+      this.setsData = this.setsData?.filter((set) => set.id !== setId);
+    });
+  }
+
+  onMuscleEdit() {
+    if (this.muscleSelectValue) {
+      if (this.exerciseId) {
+        this.supabaseService
+          .editExerciseMuscle(this.exerciseId, this.muscleSelectValue)
+          .subscribe((exercise) => {
+            this.dataSetup(exercise);
+          });
+      }
+    }
+  }
+
+  onEquipmentEdit() {
+    if (this.equipmentSelectValue) {
+      if (this.exerciseId) {
+        this.supabaseService
+          .editExerciseEquipment(this.exerciseId, this.equipmentSelectValue)
+          .subscribe((exercise) => {
+            this.dataSetup(exercise);
+          });
+      }
+    }
   }
 }

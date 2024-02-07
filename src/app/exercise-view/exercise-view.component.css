@@ -22,15 +22,15 @@
   width: 100%;
   background-color: #19252b;
   border-radius: 10px;
-  cursor: pointer;
+  /* cursor: pointer;
   transition: all;
-  transition-duration: 300ms;
+  transition-duration: 300ms; */
   margin-top: 20px;
 }
 
 .exercise-item:hover {
-  background-color: #121e24;
-  box-shadow: 1px 1px 20px rgb(11, 16, 22);
+  /* background-color: #121e24;
+  box-shadow: 1px 1px 20px rgb(11, 16, 22); */
 }
 
 .set-item-add {
@@ -59,7 +59,6 @@
   width: 100%;
   color: rgb(255, 255, 255);
   background-color: #19252b;
-
   border-radius: 10px;
   margin-top: 20px;
 }
@@ -68,14 +67,44 @@ h2 {
   padding: 10px;
   padding-left: 20px;
 }
+
 h3 {
   padding-left: 20px;
   padding-bottom: 15px;
 }
 
+.no-sets-info {
+  color: rgb(170, 170, 170);
+  width: 100%;
+  text-align: center;
+}
+
+.select-label {
+  color: rgb(170, 170, 170);
+  margin-bottom: 10px;
+  padding-left: 20px;
+  background-color: #19252b;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: large;
+  cursor: pointer;
+  transition: all;
+  transition-duration: 300ms;
+  padding-right: 10px;
+}
+
+.select-label:hover {
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 20px rgb(11, 16, 22);
+}
+
+.select-option {
+  border-radius: 10px;
+}
+
 .back-btn {
   position: absolute;
-  top: 1rem;
+  top: 0.3rem;
   left: 0;
   padding: 5px;
   padding-inline: 10px;
@@ -162,28 +191,34 @@ h3 {
 
 .exercise-name {
   padding-top: 15px;
-  font-size: large;
   color: rgb(231, 231, 231);
-
   width: 100%;
 }
 
-/* .back-btn {
+.exercise-title {
   display: flex;
   align-items: center;
-  color: white;
+}
+
+.exercise-title-name-t {
   text-align: center;
-  font-size: medium;
-  margin: auto;
-  width: 100%;
-  background-color: #19252b;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all;
-  padding: 20px;
-  transition-duration: 300ms;
-  margin-top: 20px;
-} */
+  font-weight: 400;
+  color: rgb(193, 203, 207);
+  font-size: 1.3rem;
+}
+
+.exercise-title-icon {
+  text-align: center;
+  padding-block: 5px;
+  padding-inline: 10px;
+}
+
+.exercise-title-name-e {
+  text-align: center;
+  font-weight: 600;
+  color: rgb(219, 225, 228);
+  font-size: 1.6rem;
+}
 
 .back-btn-icon {
   padding-right: 5px;

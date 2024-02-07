@@ -8,7 +8,7 @@ import { faChevronRight, faTrash } from '@fortawesome/free-solid-svg-icons';
   styleUrl: './exercise-item.component.css',
 })
 export class ExerciseItemComponent implements OnInit {
-  exerciseSets?: any[];
+  exerciseSets: any[] = [];
 
   @Input() index!: number;
   @Input() exercise?: any;

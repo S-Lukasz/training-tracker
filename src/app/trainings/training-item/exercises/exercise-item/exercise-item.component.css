@@ -18,11 +18,20 @@
   box-shadow: 1px 1px 20px rgb(11, 16, 22);
 }
 
+.set-title-last {
+  color: rgb(231, 231, 231);
+  font-size: medium;
+  text-align: left;
+  width: 100%;
+  padding-top: 0.8rem;
+  margin-left: 4rem;
+}
+
 .sets-label {
   display: flex;
   flex-direction: column;
   padding-top: 15px;
-  padding-left: 60px;
+  padding-left: 4rem;
   text-align: center;
   font-size: small;
   width: 100%;

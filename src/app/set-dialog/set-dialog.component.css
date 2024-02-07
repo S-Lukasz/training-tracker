@@ -15,13 +15,14 @@
 
 .alert-box {
   width: 30%;
-  height: 22%;
   margin-top: 20%;
   margin-left: auto;
   margin-right: auto;
   z-index: 20;
   background-color: rgb(39, 42, 54);
   border-radius: 10px;
+  padding: 10px;
+  padding-bottom: 20px;
 }
 
 .alert-label {

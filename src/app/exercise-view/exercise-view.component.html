@@ -1,13 +1,15 @@
 <app-set-dialog
   (onSetAdd)="onSetAdd($event)"
+  (onSetEdit)="onSetEdit($event)"
   [changingDialog]="changingDialogActive"
 ></app-set-dialog>
 
 <div class="exercise">
-  <h2>
-    {{ trainingData?.name }} <fa-icon [icon]="faAngleRight"> </fa-icon> Exercise
-    {{ index + 1 }}
-  </h2>
+  <div class="exercise-title">
+    <div class="exercise-title-name-t">{{ trainingData?.name }}</div>
+    <fa-icon class="exercise-title-icon" [icon]="faAngleRight"> </fa-icon>
+    <div class="exercise-title-name-e">Exercise {{ index + 1 }}</div>
+  </div>
 
   <button
     class="back-btn"
@@ -17,19 +19,44 @@
     <fa-icon class="back-btn-icon" [icon]="faAngleLeft"> </fa-icon>
     Back
   </button>
-
   <button class="exercise-item">
     <h2>Muscle</h2>
-    <h3 [ngStyle]="{ color: 'gray' }">{{ exerciseData?.muscles?.name }}</h3>
+    <select
+      [(ngModel)]="muscleSelectValue"
+      class="select-label"
+      (change)="onMuscleEdit()"
+    >
+      <option
+        class="select-option"
+        *ngFor="let muscle of muscles"
+        [value]="muscle?.id"
+      >
+        {{ muscle?.name }}
+      </option>
+    </select>
   </button>
-
   <button class="exercise-item">
     <h2>Equipment</h2>
-    <h3 [ngStyle]="{ color: 'gray' }">{{ exerciseData?.equipments?.name }}</h3>
+    <select
+      [(ngModel)]="equipmentSelectValue"
+      class="select-label"
+      (change)="onEquipmentEdit()"
+    >
+      <option
+        class="select-option"
+        *ngFor="let equipment of equipments"
+        [value]="equipment?.id"
+      >
+        {{ equipment?.name }}
+      </option>
+    </select>
   </button>
 
   <div class="sets-label" *ngIf="setsData">
     <h2>Sets</h2>
+    <h3 *ngIf="setsData.length === 0" class="no-sets-info">
+      No sets assigned, add your first set here.
+    </h3>
     <div
       *ngFor="let set of setsData; let i = index"
       [ngClass]="{
@@ -43,15 +70,10 @@
         <h3 class="set-item-info">Weight: {{ set?.weight }} kg</h3>
       </button>
 
-      <button class="set-remove-btn" (click)="onSetRemoveClick(i)">
+      <button class="set-remove-btn" (click)="onSetRemoveClick(set.id)">
         <fa-icon [icon]="faTrash"></fa-icon>
       </button>
     </div>
   </div>
   <button class="set-item-add" (click)="onSetDialogView()">+ Add set</button>
 </div>
-
-<!-- [ngClass]="{
-  'alert-confirm-btn-enabled': isDialogValid,
-  'alert-confirm-btn-disabled': !isDialogValid
-}" -->

@@ -1,11 +1,14 @@
 <div class="exercise-item">
   <div class="exercise-right">
-    <h4 *ngFor="let set of exerciseSets; let i = index" class="sets-label">
-      <h3 class="set-title">Set {{ i + 1 }}:</h3>
-      <h4 class="set-data">
-        reps {{ set?.reps }} - weight {{ set?.weight }}kg
-      </h4>
+    <h4 *ngFor="let set of exerciseSets; let i = index">
+      <div class="sets-label" *ngIf="i <= 2">
+        <h3 class="set-title">Set {{ i + 1 }}:</h3>
+        <h4 class="set-data">
+          reps {{ set?.reps }} - weight {{ set?.weight }}kg
+        </h4>
+      </div>
     </h4>
+    <h3 class="set-title-last" *ngIf="exerciseSets.length > 3">Set...</h3>
   </div>
 
   <div class="exercise-left">

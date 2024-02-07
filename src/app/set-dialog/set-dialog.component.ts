@@ -25,39 +25,26 @@ export class SetDialogComponent implements OnInit {
   weightToEdit?: number;
   repsSelectValue?: number;
   weightSelectValue?: number;
+  editedSetIndex?: number;
 
   reps: number[] = Array.from({ length: 99 }, (_, i) => i + 1);
   weights: number[] = Array.from({ length: 500 }, (_, i) => i + 1);
 
   @Input() changingDialog?: Subject<SetToAdd | undefined>;
-  @Input() editedSetIndex?: number;
 
   @Output() onDialogActiveView: EventEmitter<boolean> =
     new EventEmitter<boolean>();
   @Output() onSetAdd: EventEmitter<SetToAdd> = new EventEmitter<SetToAdd>();
+  @Output() onSetEdit: EventEmitter<SetToAdd> = new EventEmitter<SetToAdd>();
 
   ngOnInit() {
     this.changingDialog?.subscribe((set) => {
       this.editSet = set !== undefined;
-
+      this.editedSetIndex = set?.id;
       this.repsSelectValue = this.editSet ? set?.reps : this.reps?.at(0);
       this.weightSelectValue = this.editSet ? set?.weight : this.weights?.at(0);
       this.setDialogView();
     });
-  }
-
-  setRepsAndWeights() {
-    this.repsSelectValue = this.editSet ? this.repsToEdit : this.reps?.at(0);
-    this.weightSelectValue = this.editSet
-      ? this.weightToEdit
-      : this.weights?.at(0);
-
-    console.log(
-      'changeSetData: ',
-      this.repsSelectValue + ' repsToEdit: ',
-      this.repsToEdit + ' editSet: ',
-      this.editSet
-    );
   }
 
   setDialogView() {
@@ -68,13 +55,13 @@ export class SetDialogComponent implements OnInit {
     if (!this.repsSelectValue || !this.weightSelectValue) return;
 
     const setToAdd: SetToAdd = {
+      id: this.editedSetIndex,
       reps: this.repsSelectValue,
       weight: this.weightSelectValue,
     };
 
-    console.log('onExerciseAddEmit: ', setToAdd);
-
-    this.onSetAdd.emit(setToAdd);
+    if (this.editSet) this.onSetEdit.emit(setToAdd);
+    else this.onSetAdd.emit(setToAdd);
   }
 
   getEditedSetIndex(): number {

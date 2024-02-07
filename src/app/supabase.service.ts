@@ -90,8 +90,8 @@ export class SupabaseService {
           id, 
           muscle_id, 
           equipment_id, 
-          muscles(name), 
-          equipments(name)
+          muscles(name, id), 
+          equipments(name, id)
         )`
       )
       .eq('id', trainingId)
@@ -115,8 +115,8 @@ export class SupabaseService {
         muscle_id, 
         equipment_id, 
         training_id,
-        muscles(name), 
-        equipments(name)`
+        muscles(name, id), 
+        equipments(name, id)`
       )
       .eq('id', exerciseId)
       .limit(1)
@@ -216,7 +216,12 @@ export class SupabaseService {
     const request = this.supabase.from('sets').delete().eq('id', id);
 
     const response = new Observable<Tables<'sets'>>((observer) => {
-      request.then(({ data }) => observer.next(data as any));
+      console.log('removeSet bef: ', id);
+      request.then(({ data }) => {
+        observer.next(data as any);
+        console.log('removeSet then: ', data);
+      });
+      console.log('removeSet after: ', id);
     });
 
     return response;
@@ -235,8 +240,8 @@ export class SupabaseService {
         muscle_id, 
         equipment_id, 
         training_id,
-        muscles(name), 
-        equipments(name)`
+        muscles(name, id), 
+        equipments(name, id)`
       )
       .limit(1)
       .single();
@@ -259,7 +264,8 @@ export class SupabaseService {
         exercise_id: exerciseId,
       })
       .select(
-        `reps, 
+        `id,
+        reps, 
         weight, 
         exercise_id
         `
@@ -271,6 +277,84 @@ export class SupabaseService {
 
     const response = new Observable<SetsData>((observer) => {
       request.then(({ data }) => observer.next(data as any));
+    });
+
+    return response;
+  }
+
+  editSet(setId: number, reps: number, weight: number) {
+    const request = this.supabase
+      .from('sets')
+      .update({
+        reps: reps,
+        weight: weight,
+      })
+      .eq('id', setId)
+      .select(
+        `id,
+        reps, 
+        weight, 
+        exercise_id
+        `
+      )
+      .single();
+
+    const response = new Observable<Tables<'sets'>>((observer) => {
+      request.then(({ data }) => {
+        observer.next(data as any);
+      });
+    });
+
+    return response;
+  }
+
+  editExerciseMuscle(exerciseId: number, muscleId: number) {
+    const request = this.supabase
+      .from('exercises')
+      .update({
+        muscle_id: muscleId,
+      })
+      .eq('id', exerciseId)
+      .select(
+        `id, 
+        muscle_id, 
+        equipment_id, 
+        training_id,
+        muscles(name, id), 
+        equipments(name, id)`
+      )
+      .single();
+
+    const response = new Observable<Tables<'exercises'>>((observer) => {
+      request.then(({ data }) => {
+        observer.next(data as any);
+      });
+    });
+
+    return response;
+  }
+
+  editExerciseEquipment(exerciseId: number, equipmentId: number) {
+    const request = this.supabase
+      .from('exercises')
+      .update({
+        equipment_id: equipmentId,
+      })
+      .eq('id', exerciseId)
+      .select(
+        `id, 
+        muscle_id, 
+        equipment_id, 
+        training_id,
+        muscles(name, id), 
+        equipments(name, id)`
+      )
+      .single();
+
+    const response = new Observable<Tables<'exercises'>>((observer) => {
+      request.then(({ data }) => {
+        observer.next(data as any);
+      });
     });
 
     return response;

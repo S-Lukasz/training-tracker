@@ -3,6 +3,7 @@ import { SupabaseService } from '../supabase.service';
 import { Tables } from '../../types/supabase';
 import { SharedService } from '../services/shared.service';
 import { Router } from '@angular/router';
+import { faDumbbell } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-trainings',
@@ -12,6 +13,8 @@ import { Router } from '@angular/router';
 export class TrainingsComponent implements OnInit {
   trainings: Tables<'trainings'>[] = [];
   showAddView: boolean = false;
+
+  // faDumbbell = faDumbbell;
 
   constructor(
     private supabaseService: SupabaseService,
