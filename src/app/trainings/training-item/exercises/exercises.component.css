@@ -55,18 +55,15 @@
   padding-right: 5px;
 }
 
-/* display: flex;
-align-items: center;
-text-align: left;
-width: 40%;
-padding: 15px;
-margin: auto;
-margin-top: 20px;
-background-color: #19252b;
-border-radius: 10px;
-cursor: pointer;
-color: rgb(231, 231, 231);
-font-size: large;
-font-weight: bold;
-transition: all;
-transition-duration: 300ms; */
+@media only screen and (max-width: 740px) {
+  .exercises {
+    margin-top: 15px;
+    margin: auto;
+    align-items: center;
+    position: relative;
+    width: 80%;
+  }
+  .exercise-back-btn {
+    top: -3rem;
+  }
+}

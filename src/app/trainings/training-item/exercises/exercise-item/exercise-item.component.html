@@ -1,15 +1,10 @@
 <div class="exercise-item">
-  <div class="exercise-right">
-    <h4 *ngFor="let set of exerciseSets; let i = index">
-      <div class="sets-label" *ngIf="i <= 2">
-        <h3 class="set-title">Set {{ i + 1 }}:</h3>
-        <h4 class="set-data">
-          reps {{ set?.reps }} - weight {{ set?.weight }}kg
-        </h4>
-      </div>
-    </h4>
-    <h3 class="set-title-last" *ngIf="exerciseSets.length > 3">Set...</h3>
-  </div>
+  <fa-icon
+    class="exercise-remove"
+    [icon]="faTrash"
+    (click)="onExerciseRemoveClick()"
+  >
+  </fa-icon>
 
   <div class="exercise-left">
     <div class="muscle-label">
@@ -22,12 +17,19 @@
     </div>
   </div>
 
-  <fa-icon
-    class="exercise-remove"
-    [icon]="faTrash"
-    (click)="onExerciseRemoveClick()"
-  >
-  </fa-icon>
+  <div class="exercise-right">
+    <h4 *ngFor="let set of exerciseSets; let i = index">
+      <div class="sets-label" *ngIf="i < 2">
+        <h3 class="set-title">Set {{ i + 1 }}</h3>
+        <div class="set-data-label">
+          <span class="set-data-reps">- reps {{ set?.reps }}</span>
+          <span class="set-data-weight">- weight {{ set?.weight }}kg </span>
+        </div>
+      </div>
+    </h4>
+    <h3 class="set-title-last" *ngIf="exerciseSets.length > 2">Set...</h3>
+  </div>
+
   <div
     class="exercise-edit"
     [routerLink]="['/exercise-view']"

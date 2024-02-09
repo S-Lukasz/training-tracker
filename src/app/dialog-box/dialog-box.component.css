@@ -93,16 +93,72 @@
   transition-duration: 300ms;
 }
 
-/* .alert-confirm-btn-disabled {
-  margin-top: 20px;
-  width: 30%;
-  padding: 5px;
-  border-radius: 10px;
-  background-color: rgb(32, 34, 44);
-  color: rgb(143, 143, 143);
-} */
-
 .alert-confirm-btn-enabled:hover:not([disabled]) {
   background-color: rgb(29, 31, 41);
   border-radius: 10px;
+}
+
+@media only screen and (max-width: 1124px) {
+  .alert-box {
+    width: 45%;
+    margin-top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .alert-box-selectable {
+    width: 70%;
+    margin-left: 20px;
+  }
+
+  .alert-box-selectable:hover,
+  .alert-box-selectable:focus {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .alert-box {
+    width: 70%;
+    margin-top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .alert-box-selectable {
+    width: 70%;
+    margin-left: 20px;
+  }
+
+  .alert-box-selectable-title {
+    padding-inline: 40px;
+  }
+
+  .alert-box-selectable:hover,
+  .alert-box-selectable:focus {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 624px) {
+  .alert-box {
+    width: 80%;
+    margin-top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .alert-box-selectable-title {
+    padding-inline: 20px;
+  }
+
+  .alert-box-selectable {
+    width: 70%;
+    margin-left: 20px;
+  }
+
+  .alert-box-selectable:hover,
+  .alert-box-selectable:focus {
+    width: 75%;
+  }
 }

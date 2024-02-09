@@ -89,3 +89,16 @@
   color: rgb(211, 222, 238);
   text-shadow: 1px 1px 20px rgb(11, 16, 22);
 }
+
+@media only screen and (max-width: 740px) {
+  .training-remove-btn {
+    right: -4rem;
+    margin: 0;
+    top: 2.5rem;
+  }
+
+  .training-name-label {
+    text-wrap: nowrap;
+    margin-bottom: 15px;
+  }
+}

@@ -11,46 +11,48 @@
     <div class="exercise-title-name-e">Exercise {{ index + 1 }}</div>
   </div>
 
-  <button
-    class="back-btn"
-    [routerLink]="['/training-view']"
-    [queryParams]="{ trainingId: exerciseData?.training_id?.toString() }"
-  >
-    <fa-icon class="back-btn-icon" [icon]="faAngleLeft"> </fa-icon>
-    Back
-  </button>
-  <button class="exercise-item">
-    <h2>Muscle</h2>
-    <select
-      [(ngModel)]="muscleSelectValue"
-      class="select-label"
-      (change)="onMuscleEdit()"
+  <div class="main-items-label">
+    <button
+      class="back-btn"
+      [routerLink]="['/training-view']"
+      [queryParams]="{ trainingId: exerciseData?.training_id?.toString() }"
     >
-      <option
-        class="select-option"
-        *ngFor="let muscle of muscles"
-        [value]="muscle?.id"
+      <fa-icon class="back-btn-icon" [icon]="faAngleLeft"> </fa-icon>
+      Back
+    </button>
+    <button class="exercise-item">
+      <h2>Muscle</h2>
+      <select
+        [(ngModel)]="muscleSelectValue"
+        class="select-label"
+        (change)="onMuscleEdit()"
       >
-        {{ muscle?.name }}
-      </option>
-    </select>
-  </button>
-  <button class="exercise-item">
-    <h2>Equipment</h2>
-    <select
-      [(ngModel)]="equipmentSelectValue"
-      class="select-label"
-      (change)="onEquipmentEdit()"
-    >
-      <option
-        class="select-option"
-        *ngFor="let equipment of equipments"
-        [value]="equipment?.id"
+        <option
+          class="select-option"
+          *ngFor="let muscle of muscles"
+          [value]="muscle?.id"
+        >
+          {{ muscle?.name }}
+        </option>
+      </select>
+    </button>
+    <button class="exercise-item">
+      <h2>Equipment</h2>
+      <select
+        [(ngModel)]="equipmentSelectValue"
+        class="select-label"
+        (change)="onEquipmentEdit()"
       >
-        {{ equipment?.name }}
-      </option>
-    </select>
-  </button>
+        <option
+          class="select-option"
+          *ngFor="let equipment of equipments"
+          [value]="equipment?.id"
+        >
+          {{ equipment?.name }}
+        </option>
+      </select>
+    </button>
+  </div>
 
   <div class="sets-label" *ngIf="setsData">
     <h2>Sets</h2>

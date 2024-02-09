@@ -41,6 +41,7 @@
 .exercise-right {
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .exercise-left {
@@ -60,10 +61,6 @@
   color: rgb(231, 231, 231);
   font-size: medium;
   text-align: left;
-}
-
-.set-data {
-  display: flex;
 }
 
 .exercise-title {
@@ -115,4 +112,64 @@
 
 .exercise-edit:hover {
   color: rgb(231, 231, 231);
+}
+
+.set-data-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.set-data-reps {
+  display: flex;
+  color: rgb(138, 141, 148);
+}
+
+.set-data-weight {
+  display: flex;
+  color: rgb(138, 141, 148);
+}
+
+@media only screen and (max-width: 1040px) {
+  .exercise-left {
+    margin: 0;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .muscle-label {
+    margin: 0;
+    padding: 0;
+  }
+
+  .equipment-label {
+    margin: 0;
+    padding: 0;
+  }
+
+  .exercise-title {
+    text-align: left;
+    font-size: large;
+    color: rgb(231, 231, 231);
+  }
+
+  .exercise-name {
+    text-align: left;
+    font-size: medium;
+    color: rgb(138, 141, 148);
+  }
+
+  .sets-label {
+    padding-left: 1.5rem;
+  }
+
+  .set-title-last {
+    color: rgb(231, 231, 231);
+    font-size: medium;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding-left: 1.5rem;
+    padding-top: 0.8rem;
+  }
 }

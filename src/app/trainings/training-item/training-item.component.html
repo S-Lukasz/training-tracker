@@ -8,20 +8,20 @@
       <h2 class="training-item-name">{{ training?.name }}</h2>
       <h4 class="exercises-item-name">Exercises:</h4>
       <div class="training-item-exercises">
-        <h3
-          class="training-item-exercise"
-          *ngFor="let exercise of trainingData?.exercises; let i = index"
-        >
-          {{ exercise.muscles?.name }}
-          <h4
-            class="training-item-exercises-break"
-            *ngIf="
-              trainingData?.exercises?.length > 1 &&
-              i !== trainingData?.exercises?.length - 1
-            "
-          >
-            /
-          </h4>
+        <h3 *ngFor="let exercise of trainingData?.exercises; let i = index">
+          <div class="training-item-exercise" *ngIf="i < 3">
+            {{ exercise.muscles?.name }}
+            <h4
+              class="training-item-exercises-break"
+              *ngIf="
+                trainingData?.exercises?.length > 1 &&
+                i !== trainingData?.exercises?.length - 1
+              "
+            >
+              /
+            </h4>
+          </div>
+          <div class="training-item-exercise" *ngIf="i >= 3">...</div>
         </h3>
       </div>
     </div>

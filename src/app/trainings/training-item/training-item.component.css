@@ -11,11 +11,16 @@
   cursor: pointer;
   transition: all;
   transition-duration: 300ms;
+  position: relative;
 }
 
 .training-item-btn:hover {
   background-color: #121e24;
   box-shadow: 1px 1px 20px rgb(11, 16, 22);
+}
+
+.training-item-btn:hover .training-item-date {
+  color: rgb(214, 219, 221);
 }
 
 .training-item-name {
@@ -58,6 +63,9 @@
 
 .training-item-right {
   display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
   color: rgb(139, 139, 139);
   justify-items: center;
   padding-right: 30px;
@@ -72,4 +80,32 @@
 
 .training-item-icon {
   font-size: large;
+}
+
+@media only screen and (max-width: 540px) {
+  .training-item-name {
+    width: 8rem;
+    padding: 2px;
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .training-item-right {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: rgb(139, 139, 139);
+    justify-items: center;
+    padding-right: 15px;
+    padding-top: 24px;
+  }
+
+  .training-item-date {
+    font-size: medium;
+    color: rgb(139, 139, 139);
+    padding-right: 10px;
+    transition: all;
+    transition-duration: 300ms;
+  }
 }

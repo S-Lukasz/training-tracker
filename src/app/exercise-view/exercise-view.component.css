@@ -7,6 +7,7 @@
   justify-content: flex-start;
   text-align: center;
   margin-top: 60px;
+  margin-bottom: 60px;
   color: white;
   width: 40%;
   position: relative;
@@ -22,15 +23,7 @@
   width: 100%;
   background-color: #19252b;
   border-radius: 10px;
-  /* cursor: pointer;
-  transition: all;
-  transition-duration: 300ms; */
   margin-top: 20px;
-}
-
-.exercise-item:hover {
-  /* background-color: #121e24;
-  box-shadow: 1px 1px 20px rgb(11, 16, 22); */
 }
 
 .set-item-add {
@@ -81,9 +74,10 @@ h3 {
 
 .select-label {
   color: rgb(170, 170, 170);
-  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-bottom: 15px;
   padding-left: 20px;
-  background-color: #19252b;
+  background-color: #2d3f47;
   border-radius: 10px;
   font-weight: 700;
   font-size: large;
@@ -93,8 +87,11 @@ h3 {
   padding-right: 10px;
 }
 
-.select-label:hover {
+.select-label:hover,
+.select-label:focus {
+  padding-right: 20px;
   color: rgb(255, 255, 255);
+  background-color: #3f5158;
   text-shadow: 1px 1px 20px rgb(11, 16, 22);
 }
 
@@ -222,4 +219,85 @@ h3 {
 
 .back-btn-icon {
   padding-right: 5px;
+}
+
+.main-items-label {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.35rem;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1164px) {
+  .exercise {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 65%;
+  }
+
+  .main-items-label {
+    margin-top: 0.4rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .exercise {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 75%;
+  }
+
+  .main-items-label {
+    margin-top: 2.5rem;
+  }
+
+  .exercise-item {
+    margin-top: 10px;
+  }
+
+  .sets-label {
+    margin-top: 10px;
+  }
+
+  .back-btn {
+    top: 2.5rem;
+  }
+
+  .set-item-title {
+    text-align: left;
+  }
+
+  .set-item-info {
+    width: 4rem;
+    font-size: small;
+    text-align: center;
+    text-wrap: nowrap;
+  }
+
+  .exercise-name {
+    font-size: small;
+  }
+
+  .sets-label-button {
+    margin-right: 40px;
+  }
+
+  h3 {
+    padding-left: 5px;
+    padding-bottom: 8px;
+  }
+
+  .exercise-title-name-t {
+    font-size: 1.15rem;
+  }
+
+  .exercise-title-icon {
+    text-align: center;
+    padding-block: 5px;
+    padding-inline: 10px;
+  }
+
+  .exercise-title-name-e {
+    font-size: 1.35rem;
+  }
 }

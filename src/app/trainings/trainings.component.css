@@ -31,3 +31,14 @@
   background-color: #121e24;
   box-shadow: 1px 1px 20px rgb(11, 16, 22);
 }
+
+@media only screen and (max-width: 740px) {
+  .trainings {
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  .training-items {
+    margin-top: 20px;
+  }
+}
