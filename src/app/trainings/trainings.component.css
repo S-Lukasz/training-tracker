@@ -32,9 +32,31 @@
   box-shadow: 1px 1px 20px rgb(11, 16, 22);
 }
 
+@media only screen and (max-width: 1220px) {
+  .trainings {
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  .training-items {
+    margin-top: 20px;
+  }
+}
+
 @media only screen and (max-width: 740px) {
   .trainings {
     width: 80%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  .training-items {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .trainings {
+    width: 90%;
     margin-top: 20px;
     margin-bottom: 40px;
   }
