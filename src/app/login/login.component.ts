@@ -26,17 +26,9 @@ export class LoginComponent {
   }
 
   async onSignIn() {
-    console.log(
-      'onSignIn, email',
-      this.signInForm.value.email + ' password',
-      this.signInForm.value.password
-    );
-
     this.supabase
       .signIn(this.signInForm.value.email, this.signInForm.value.password)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
-
-    // console.log(error);
   }
 }

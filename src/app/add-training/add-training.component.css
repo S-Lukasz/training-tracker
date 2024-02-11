@@ -34,6 +34,18 @@
   box-shadow: 1px 1px 10px rgb(11, 16, 22);
 }
 
+.form-btn-disabled {
+  margin-top: 20px;
+  color: rgb(148, 158, 161);
+
+  background-color: #0e151a;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+}
+
 .form-btn {
   margin-top: 20px;
   color: white;

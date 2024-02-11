@@ -229,16 +229,11 @@ export class SupabaseService {
   }
 
   removeSet(id: number): Observable<Tables<'sets'>> {
-    console.log('removeSet: ', id);
     const request = this.supabase.from('sets').delete().eq('id', id);
-
     const response = new Observable<Tables<'sets'>>((observer) => {
-      console.log('removeSet bef: ', id);
       request.then(({ data }) => {
         observer.next(data as any);
-        console.log('removeSet then: ', data);
       });
-      console.log('removeSet after: ', id);
     });
 
     return response;
