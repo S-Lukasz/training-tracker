@@ -9,7 +9,7 @@
   text-align: center;
 
   width: 40%;
-  margin-top: 4rem;
+  margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -65,7 +65,6 @@
 }
 
 .sign-up-input:hover {
-  width: 75%;
   background-color: rgb(74, 92, 109);
 }
 
@@ -96,7 +95,6 @@
 }
 
 .submit-btn-enabled:hover {
-  width: 30%;
   background-color: rgb(74, 92, 109);
 }
 
@@ -116,10 +114,6 @@
   .submit-btn-disabled {
     width: 40%;
   }
-
-  .submit-btn-enabled:hover {
-    width: 45%;
-  }
 }
 
 @media only screen and (max-width: 550px) {
@@ -138,9 +132,5 @@
 
   .submit-btn-disabled {
     width: 50%;
-  }
-
-  .submit-btn-enabled:hover {
-    width: 55%;
   }
 }

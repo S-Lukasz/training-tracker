@@ -9,11 +9,16 @@ import { SupabaseService } from './supabase.service';
 export class AppComponent implements OnInit {
   title = 'Training Tracker';
 
+  isRegsisterViewSelected: boolean = true;
   session = this.supabase.session;
 
   constructor(private readonly supabase: SupabaseService) {}
 
   ngOnInit() {
     this.supabase.authChanges((_, session) => (this.session = session));
+  }
+
+  setRegisterView() {
+    this.isRegsisterViewSelected = !this.isRegsisterViewSelected;
   }
 }

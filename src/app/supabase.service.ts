@@ -195,6 +195,7 @@ export class SupabaseService {
         {
           name: name,
           date: new Date().toDateString(),
+          user_id: this._session?.user?.id ?? '',
         },
       ])
       .select()

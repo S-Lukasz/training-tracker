@@ -1,0 +1,53 @@
+.user-sign-form {
+}
+
+.sign-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  gap: 2rem;
+}
+
+.sign-btn {
+  width: 10rem;
+  padding-block: 5px;
+  padding-inline: 10px;
+  color: rgb(188, 205, 209);
+  background-color: rgb(41, 55, 68);
+  border-radius: 10px;
+  transition: all;
+  transition-duration: 300ms;
+  cursor: pointer;
+}
+
+.sign-btn-selected {
+  width: 10rem;
+  padding-block: 5px;
+  padding-inline: 10px;
+  color: rgb(188, 205, 209);
+  background-color: rgb(74, 92, 109);
+  border-radius: 10px;
+  transition: all;
+  transition-duration: 300ms;
+  cursor: pointer;
+}
+
+.sign-btn:hover {
+  background-color: rgb(74, 92, 109);
+}
+
+.sign-btn:hover {
+  color: rgb(232, 238, 240);
+  background-color: rgb(74, 92, 109);
+}
+
+@media only screen and (max-width: 550px) {
+  .sign-buttons {
+    width: 80%;
+  }
+}

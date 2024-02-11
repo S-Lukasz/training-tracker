@@ -177,18 +177,29 @@ export type Database = {
           date: string | null
           id: number
           name: string | null
+          user_id: string | null
         }
         Insert: {
           date?: string | null
           id?: number
           name?: string | null
+          user_id?: string | null
         }
         Update: {
           date?: string | null
           id?: number
           name?: string | null
+          user_id?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "trainings_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
       }
     }
     Views: {

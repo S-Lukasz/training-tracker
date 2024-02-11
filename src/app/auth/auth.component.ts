@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SupabaseService } from '../supabase.service';
+import { AuthResponse } from '@supabase/supabase-js';
 
 @Component({
   selector: 'app-auth',
@@ -11,6 +12,7 @@ export class AuthComponent {
   loading = false;
 
   signUpForm!: FormGroup;
+  signUpResponse?: AuthResponse;
 
   constructor(
     private readonly supabase: SupabaseService,
@@ -28,7 +30,7 @@ export class AuthComponent {
   async onSignUp() {
     this.supabase
       .signUp(this.signUpForm.value.email, this.signUpForm.value.password)
-      .then((res) => console.log(res))
+      .then((res) => (this.signUpResponse = res))
       .catch((err) => console.log(err));
   }
 }

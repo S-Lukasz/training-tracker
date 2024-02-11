@@ -1,8 +1,12 @@
 <div class="sign-up-container">
   <div class="main-container" aria-live="polite">
     <p class="title">Registration</p>
-
-    <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()" class="form-widget">
+    <form
+      *ngIf="!signUpResponse?.data?.user?.aud"
+      [formGroup]="signUpForm"
+      (ngSubmit)="onSignUp()"
+      class="form-widget"
+    >
       <div class="sign-up">
         <label class="sign-up-label" for="email">Email: </label>
         <input
@@ -60,5 +64,11 @@
         </button>
       </div>
     </form>
+    <div *ngIf="signUpResponse?.data?.user?.aud">
+      <h3>
+        Successful, link was sent on your e-mail, confirm your registration to
+        login on your account.
+      </h3>
+    </div>
   </div>
 </div>

@@ -1,9 +1,32 @@
 <app-header [title]="title"></app-header>
 
-<app-auth *ngIf="!session?.user"></app-auth>
-<app-login *ngIf="!session?.user"></app-login>
-
-<!-- <app-account></app-account> -->
+<div class="user-sign-form" *ngIf="!session?.user">
+  <div class="sign-buttons">
+    <button
+      class="sign-btn"
+      (click)="setRegisterView()"
+      [disabled]="!isRegsisterViewSelected"
+      [ngClass]="{
+        'sign-btn': isRegsisterViewSelected,
+        'sign-btn-selected': !isRegsisterViewSelected
+      }"
+    >
+      Login
+    </button>
+    <button
+      (click)="setRegisterView()"
+      [disabled]="isRegsisterViewSelected"
+      [ngClass]="{
+        'sign-btn': !isRegsisterViewSelected,
+        'sign-btn-selected': isRegsisterViewSelected
+      }"
+    >
+      Register
+    </button>
+  </div>
+  <app-auth *ngIf="isRegsisterViewSelected"></app-auth>
+  <app-login *ngIf="!isRegsisterViewSelected"></app-login>
+</div>
 
 <div *ngIf="session?.user" class="container">
   <router-outlet></router-outlet>
