@@ -188,7 +188,14 @@ export class SupabaseService {
     return response;
   }
 
-  addTraining(name: string): Observable<Tables<'trainings'>> {
+  addTraining(name: string): Observable<Tables<'trainings'>> | undefined {
+    console.log('addTraining: ', name);
+
+    if (!this._session || !this._session.user) {
+      console.error('session or user is undefined');
+      return undefined;
+    }
+
     const request = this.supabase
       .from('trainings')
       .insert([

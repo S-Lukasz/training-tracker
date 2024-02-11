@@ -29,7 +29,8 @@
 
 .training-remove-btn {
   position: absolute;
-  right: 0;
+  right: -1rem;
+  top: 1.5rem;
   margin-right: 20px;
   font-size: large;
   color: rgb(190, 190, 190);
@@ -92,9 +93,13 @@
 
 @media only screen and (max-width: 740px) {
   .training-remove-btn {
-    right: -4rem;
     margin: 0;
+    right: 0;
     top: 2.5rem;
+  }
+
+  .training-header {
+    width: 80%;
   }
 
   .training-name-label {

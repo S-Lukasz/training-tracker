@@ -54,10 +54,10 @@ export class TrainingsComponent implements OnInit {
   }
 
   onAddTraining(newTrainingName: string) {
-    this.supabaseService
-      .addTraining(newTrainingName)
-      .subscribe((newTraining) => {
-        this.trainings.push(newTraining);
+    const trainingAddedData = this.supabaseService.addTraining(newTrainingName);
+    if (trainingAddedData)
+      trainingAddedData.subscribe((newTraining) => {
+        if (newTraining) this.trainings.push(newTraining);
       });
   }
 }
