@@ -1,1 +1,18 @@
-<header>{{ title }}</header>
+<header>
+  <div class="title">
+    {{ title }}
+  </div>
+  <div class="user-label" *ngIf="session?.user">
+    <button class="user-logout" *ngIf="session?.user" (click)="onUserLogout()">
+      <fa-icon class="user-icon" [icon]="faRightFromBracket"></fa-icon>
+      <div class="user-logout-text">Log Out</div>
+    </button>
+
+    <div class="break-line">|</div>
+
+    <div class="user">
+      <fa-icon class="user-icon" [icon]="faUser"></fa-icon>
+      <div class="user-email">{{ session?.user?.email }}</div>
+    </div>
+  </div>
+</header>

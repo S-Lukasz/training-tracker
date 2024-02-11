@@ -1,6 +1,10 @@
-<app-header [title]="title"></app-header> 
+<app-header [title]="title"></app-header>
 
-<div class="container">
-    <router-outlet></router-outlet>
+<app-auth *ngIf="!session?.user"></app-auth>
+<app-login *ngIf="!session?.user"></app-login>
+
+<!-- <app-account></app-account> -->
+
+<div *ngIf="session?.user" class="container">
+  <router-outlet></router-outlet>
 </div>
-    

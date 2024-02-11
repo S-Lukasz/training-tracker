@@ -1,12 +1,63 @@
 header {
-  font-weight: bold;
-  font-size: large;
+  display: flex;
+  flex-direction: column;
   height: 5%;
   width: 100%;
   padding-left: 15px;
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: rgb(9, 15, 19);
-  text-align: left;
   border-bottom: 1px solid rgb(131, 171, 184);
+}
+
+.title {
+  font-weight: bold;
+  font-size: large;
+  text-align: left;
+}
+
+.user {
+  font-size: medium;
+  background-color: rgb(9, 15, 19);
+  display: flex;
+  color: rgb(192, 203, 206);
+  transition: all;
+  transition-duration: 300ms;
+  padding-top: 4px;
+}
+
+.user-logout {
+  font-size: medium;
+  background-color: rgb(9, 15, 19);
+  display: flex;
+  color: rgb(192, 203, 206);
+  cursor: pointer;
+  transition: all;
+  transition-duration: 300ms;
+  padding-top: 4px;
+}
+
+.break-line {
+  margin-left: 0.75rem;
+  padding-top: 3px;
+}
+
+.user-logout:hover {
+  color: rgb(240, 244, 245);
+}
+
+.user-label {
+  display: flex;
+}
+
+.user-icon {
+  margin-left: 0.5rem;
+  padding-inline: 0.5rem;
+}
+
+.user-logout-text {
+}
+
+.user-email {
+  margin-left: 0.3rem;
 }

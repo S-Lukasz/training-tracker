@@ -54,12 +54,19 @@ export class SupabaseService {
     return this.supabase.auth.onAuthStateChange(callback);
   }
 
-  signIn(email: string) {
-    return this.supabase.auth.signInWithOtp({ email });
+  signIn(email: string, password: string) {
+    return this.supabase.auth.signInWithPassword({ email, password });
   }
 
   signOut() {
     return this.supabase.auth.signOut();
+  }
+
+  signUp(email: string, password: string) {
+    return this.supabase.auth.signUp({
+      email: email,
+      password: password,
+    });
   }
 
   updateProfile(profile: Profile) {
@@ -206,6 +213,15 @@ export class SupabaseService {
 
     const response = new Observable<Tables<'trainings'>>((observer) => {
       request.then(({ data }) => observer.next(data as any));
+    });
+
+    return response;
+  }
+
+  getUser(): Observable<User> {
+    const request = this.supabase.auth.getUser();
+    const response = new Observable<User>((observer) => {
+      request.then(({ data }) => observer.next(data.user as User));
     });
 
     return response;

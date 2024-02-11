@@ -1,8 +1,8 @@
 <div class="sign-up-container">
   <div class="main-container" aria-live="polite">
-    <p class="title">Registration</p>
+    <p class="title">Login</p>
 
-    <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()" class="form-widget">
+    <form [formGroup]="signInForm" (ngSubmit)="onSignIn()" class="form-widget">
       <div class="sign-up">
         <label class="sign-up-label" for="email">Email: </label>
         <input
@@ -17,12 +17,12 @@
       <div
         class="form-validation"
         *ngIf="
-          signUpForm.controls['email'].invalid &&
-          (signUpForm.controls['email'].dirty ||
-            signUpForm.controls['email'].touched)
+          signInForm.controls['email'].invalid &&
+          (signInForm.controls['email'].dirty ||
+            signInForm.controls['email'].touched)
         "
       >
-        Email is requried and must be vaild.
+        Email is not vaild.
       </div>
 
       <div class="sign-up">
@@ -39,24 +39,24 @@
       <div
         class="form-validation"
         *ngIf="
-          signUpForm.controls['password'].invalid &&
-          (signUpForm.controls['password'].dirty ||
-            signUpForm.controls['password'].touched)
+          signInForm.controls['password'].invalid &&
+          (signInForm.controls['password'].dirty ||
+            signInForm.controls['password'].touched)
         "
       >
-        Password is required and must be at least 7 characters long.
+        Password must be at least 7 characters long.
       </div>
 
       <div>
         <button
           type="submit"
           [ngClass]="{
-            'submit-btn-enabled': !signUpForm.invalid,
-            'submit-btn-disabled': signUpForm.invalid
+            'submit-btn-enabled': !signInForm.invalid,
+            'submit-btn-disabled': signInForm.invalid
           }"
-          [disabled]="signUpForm.invalid"
+          [disabled]="signInForm.invalid"
         >
-          {{ loading ? "Loading" : "Sign up" }}
+          {{ loading ? "Loading" : "Sign in" }}
         </button>
       </div>
     </form>

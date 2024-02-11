@@ -23,6 +23,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddTrainingComponent } from './add-training/add-training.component';
 import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 import { SetDialogComponent } from './set-dialog/set-dialog.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   { path: '', component: TrainingsComponent },
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
     AddTrainingComponent,
     DialogBoxComponent,
     SetDialogComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

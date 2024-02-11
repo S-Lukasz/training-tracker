@@ -3,20 +3,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SupabaseService } from '../supabase.service';
 
 @Component({
-  selector: 'app-auth',
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.css'],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.css',
 })
-export class AuthComponent {
+export class LoginComponent {
   loading = false;
 
-  signUpForm!: FormGroup;
+  signInForm!: FormGroup;
 
   constructor(
     private readonly supabase: SupabaseService,
     private readonly formBuilder: FormBuilder
   ) {
-    this.signUpForm = this.formBuilder.group({
+    this.signInForm = this.formBuilder.group({
       email: formBuilder.control('', [Validators.required, Validators.email]),
       password: formBuilder.control('', [
         Validators.required,
@@ -25,10 +25,18 @@ export class AuthComponent {
     });
   }
 
-  async onSignUp() {
+  async onSignIn() {
+    console.log(
+      'onSignIn, email',
+      this.signInForm.value.email + ' password',
+      this.signInForm.value.password
+    );
+
     this.supabase
-      .signUp(this.signUpForm.value.email, this.signUpForm.value.password)
+      .signIn(this.signInForm.value.email, this.signInForm.value.password)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
+
+    // console.log(error);
   }
 }
